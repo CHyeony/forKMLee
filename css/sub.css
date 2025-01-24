@@ -367,6 +367,7 @@ body {
 }
 
 .footer-container {
+    font-family: "hanaM";
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
