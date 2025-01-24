@@ -172,7 +172,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 13%;
     background-color: rgba(0, 0, 0, 0.5); /* 검정 오버레이 (0.5는 투명도) */
     display: flex;
     flex-direction: column;
