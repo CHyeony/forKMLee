@@ -1,0 +1,181 @@
+/*FONT*/
+
+@font-face {
+    font-family: 'HanaM';
+    src: url('../font/Hana2-Medium.ttf') format('truetype');
+}
+
+/* 기본 스타일 */
+body {
+	font-family: 'HanaM';
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color:#efefefa6;
+}
+
+/* 헤더 스타일 */
+.header {
+    padding: 10px;
+}
+
+/* 네비게이션 바 */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* 로고와 메뉴 양쪽 배치 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+/* 로고 */
+.navbar span {
+    color: #fff; /* 로고 텍스트 색상 */
+    font-size: 20px; /* 로고 텍스트 크기 */
+    font-weight: bold;
+    font-family: 'HanaM';
+}
+.navbar span a{
+	text-decoration: none;
+    color: #fff;
+    padding-right:35px;
+    font-size: 16px; /* 메뉴 폰트 크기 */
+    transition: color 0.3s ease;
+}
+
+/* 메뉴 링크 */
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    padding-right:35px;
+    font-size: 16px; /* 메뉴 폰트 크기 */
+    transition: color 0.3s ease;
+}
+/* 네비게이션 메뉴 스타일 */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    padding: 0 33px;
+}
+
+.nav-item {
+    position: relative; /* 드롭다운 메뉴를 감싸는 부모 */
+}
+
+/* 메뉴 링크 기본 스타일 */
+.nav-item a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 메뉴 항목에 마우스를 올리면 색상 변경 */
+.nav-item a:hover {
+    background-color: #f2f1ef;
+    color: #132562;
+}
+
+/* 네비게이션 메뉴 스타일 */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    position: relative; /* 드롭다운 메뉴를 감싸는 부모 */
+}
+
+/* 메뉴 링크 기본 스타일 */
+.nav-item a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 메뉴 항목에 마우스를 올리면 색상 변경 */
+.nav-item a:hover {
+    background-color: #f2f1ef;
+    color: #132562;
+}
+
+/* 드롭다운 메뉴 스타일 */
+.dropdown {
+    position: absolute;
+    top: 40px; /* 부모 요소 아래에 위치 */
+    left: 0;
+    visibility: hidden; /* 기본적으로 숨김 처리 */
+    opacity: 0; /* 투명하게 설정 */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    background-color: #c0c0c0bd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+}
+
+/* 드롭다운 항목 */
+.dropdown li {
+    list-style: none;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #132562;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, color 0.3s ease;
+   /* border-bottom:1px solid #132562;*/
+}
+
+/* 드롭다운 항목에 마우스를 올리면 색상 변경 */
+.dropdown li a:hover {
+    background-color: #132562;
+    color: #f2f1ef;
+}
+
+/* 부모 항목에 마우스를 올리면 드롭다운 표시 */
+.nav-item:hover .dropdown {
+    visibility: visible; /* 드롭다운 메뉴를 표시 */
+    opacity: 1; /* 드롭다운 메뉴를 불투명하게 표시 */
+}
+
+/* 드롭다운 메뉴에 마우스를 올리면 메뉴가 사라지지 않도록 */
+.nav-item:hover .dropdown,
+.dropdown:hover {
+    visibility: visible; /* 드롭다운이 보이도록 설정 */
+    opacity: 1; /* 드롭다운을 불투명하게 설정 */
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* 다른 요소들보다 위에 표시되도록 설정 */
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+

@@ -1,0 +1,337 @@
+
+/* 기본 스타일 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color:#efefefa6;
+}
+
+/* 헤더 스타일 */
+.header {
+    padding: 10px;
+}
+
+/* 네비게이션 바 */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* 로고와 메뉴 양쪽 배치 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+/* 로고 */
+.navbar span {
+    color: #fff; /* 로고 텍스트 색상 */
+    font-size: 20px; /* 로고 텍스트 크기 */
+    font-weight: bold;
+}
+
+/* 메뉴 링크 */
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    padding-right:35px;
+    font-size: 16px; /* 메뉴 폰트 크기 */
+    transition: color 0.3s ease;
+}
+/* 네비게이션 메뉴 스타일 */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    position: relative; /* 드롭다운 메뉴를 감싸는 부모 */
+}
+
+/* 메뉴 링크 기본 스타일 */
+.nav-item a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 메뉴 항목에 마우스를 올리면 색상 변경 */
+.nav-item a:hover {
+    background-color: #f2f1ef;
+    color: #132562;
+}
+
+/* 네비게이션 메뉴 스타일 */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    position: relative; /* 드롭다운 메뉴를 감싸는 부모 */
+}
+
+/* 메뉴 링크 기본 스타일 */
+.nav-item a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 메뉴 항목에 마우스를 올리면 색상 변경 */
+.nav-item a:hover {
+    background-color: #f2f1ef;
+    color: #132562;
+}
+
+/* 드롭다운 메뉴 스타일 */
+.dropdown {
+    position: absolute;
+    top: 40px; /* 부모 요소 아래에 위치 */
+    left: 0;
+    visibility: hidden; /* 기본적으로 숨김 처리 */
+    opacity: 0; /* 투명하게 설정 */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    background-color: #c0c0c0bd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+}
+
+/* 드롭다운 항목 */
+.dropdown li {
+    list-style: none;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #132562;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, color 0.3s ease;
+   /* border-bottom:1px solid #132562;*/
+}
+
+/* 드롭다운 항목에 마우스를 올리면 색상 변경 */
+.dropdown li a:hover {
+    background-color: #132562;
+    color: #f2f1ef;
+}
+
+/* 부모 항목에 마우스를 올리면 드롭다운 표시 */
+.nav-item:hover .dropdown {
+    visibility: visible; /* 드롭다운 메뉴를 표시 */
+    opacity: 1; /* 드롭다운 메뉴를 불투명하게 표시 */
+}
+
+/* 드롭다운 메뉴에 마우스를 올리면 메뉴가 사라지지 않도록 */
+.nav-item:hover .dropdown,
+.dropdown:hover {
+    visibility: visible; /* 드롭다운이 보이도록 설정 */
+    opacity: 1; /* 드롭다운을 불투명하게 설정 */
+}
+.infoTitle {
+    position: relative;
+    width: 100%;
+    height: 350px; /* 배너 높이 */
+    overflow: hidden;
+}
+
+/* 배경 이미지 슬라이드 */
+.infoTitle-images {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.infoTitle-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.infoTitle-img.active {
+    opacity: 1;
+}
+
+/* 어둡게 처리하는 오버레이 */
+.infoTitle-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 검정 오버레이 (0.5는 투명도) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* 텍스트 색상 */
+    text-align: center;
+    z-index: 1; /* 텍스트를 위로 올리기 */
+}
+
+/* infoTitle 텍스트 스타일 */
+.infoTitle-text h1 {
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #bcc2c8;
+}
+
+.infoTitle-text p {
+    font-size: 20px;
+    color: #bcc2c8;
+}
+
+.infoTitle-button {
+    background-color: #173187; /* Yves Blue 컬러 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.infoTitle-button:hover {
+    background-color: #132562; /* Hover 시 어두운 톤 */
+}
+
+
+.our-sets, .our-advantage, .our-products {
+    padding: 50px;
+    text-align: center;
+}
+
+.set-items, .advantages, .products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.set-item, .advantage, .product {
+    margin: 10px;
+    text-align: center;
+}
+
+/*TEXT AREA*/
+/* 이미지 아래 텍스트 영역 스타일 */
+.infoContent {
+    background-color: #ffffff; /* 흰색 배경 */
+    padding: 20px; /* 여백 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.infoContent-text p {
+    font-size: 16px; /* 글씨 크기 */
+    color: #333; /* 텍스트 색상 */
+    margin: 10px 0; /* 문단 간격 */
+    line-height: 1.6; /* 줄 간격 */
+}
+/* FOOTER */
+/* Footer 스타일 */
+.footer {
+    background-color: #132562; /* Yves Blue 색상 */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+}
+
+.footer-section h3 {
+    font-size: 12px;
+    margin-bottom: 15px;
+    color: #f2f1ef; /* 밝은 색상 */
+    text-align: left;
+}
+
+.footer-section p, .footer-section ul {
+    font-size: 10px;
+    line-height: 1.8;
+    color: #bcc2c8;
+    text-align: left;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section .social-links {
+   list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.footer-section .social-links li {
+   /*  margin: 0 15px; */
+   margin-right:15px;
+}
+
+.footer-section .social-links a {
+    color: #f2f1ef;
+    text-decoration: none;
+    font-size: 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-section .social-links a:hover {
+    color: #173187; /* Yves Blue 색상 */
+}
+.sns-img{
+	width:10px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* 다른 요소들보다 위에 표시되도록 설정 */
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+
