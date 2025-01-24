@@ -29,7 +29,7 @@ body {
 /* 로고 */
 .navbar span {
     color: #fff; /* 로고 텍스트 색상 */
-    font-size: 20px; /* 로고 텍스트 크기 */
+    font-size: 25px; /* 로고 텍스트 크기 */
     font-weight: bold;
 }
 
@@ -40,7 +40,7 @@ body {
     text-decoration: none;
     color: #fff;
     padding-right:35px;
-    font-size: 16px; /* 메뉴 폰트 크기 */
+    font-size: 18px; /* 메뉴 폰트 크기 */
     transition: color 0.3s ease;
 }
 /* 네비게이션 메뉴 스타일 */
