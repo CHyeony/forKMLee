@@ -15,6 +15,12 @@
     		location.href=targetUrl;	
     	}
     </script>
+    <style>
+         #map {
+            width: 60%;
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
     <!-- 헤더 섹션 -->
@@ -64,7 +70,7 @@
 
     <!-- OUR SETS 섹션 -->
     <section class="our-sets">
-        <h2>OUR SETS</h2>
+        <h2>생산 제품</h2>
         <div class="set-items">
             <div class="set-item">
                 <img src="images/set1.jpg" alt="Set 1">
@@ -98,20 +104,47 @@
 
     <!-- OUR PRODUCTS 섹션 -->
     <section class="our-products">
-        <h2>OUR PRODUCTS</h2>
+        <h2>찾아오시는 길</h2>
         <div class="products">
-            <div class="product">
-                <img src="images/product1.jpg" alt="Product 1">
-
-                <h3>Surface Cleaner</h3>
-                <span>$20</span>
-            </div>
-            <div class="product">
-                <img src="images/product2.jpg" alt="Product 2">
-                <h3>Dish Soap</h3>
-                <span>$30</span>
-            </div>
-            <!-- 다른 상품 추가 -->
+            <div id="map"></div>
+    
+            <script>
+                // 지도 표시 영역
+                const mapContainer = document.getElementById('map'); 
+                const mapOption = {
+                  center: new kakao.maps.LatLng(37.3947, 126.7352), // 기본 좌표
+                  level: 3 // 확대 수준
+                };
+            
+                const map = new kakao.maps.Map(mapContainer, mapOption); // 지도 생성
+            
+                // 주소-좌표 변환 객체 생성
+                const geocoder = new kakao.maps.services.Geocoder();
+            
+                // 주소 검색 및 결과 처리
+                geocoder.addressSearch('경기도 시흥시 월곶고잔 3길 70-6', function(result, status) {
+                  if (status === kakao.maps.services.Status.OK) {
+                    const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+            
+                 
+                    map.setCenter(coords);
+            
+                
+                    const marker = new kakao.maps.Marker({
+                      map: map,
+                      position: coords
+                    });
+            
+                    // 인포윈도우 추가
+                    const infowindow = new kakao.maps.InfoWindow({
+                      content: '<div style="padding:5px;">경기도 시흥시 월곶고잔 3길 70-6 </div>'
+                    });
+                    infowindow.open(map, marker);
+                  } else {
+                    alert('주소를 찾을 수 없습니다.');
+                  }
+                });
+              </script>
         </div>
     </section>
     
