@@ -18,6 +18,7 @@ body {
 .header {
     padding: 10px;
     font-family: 'HanaM';
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* 네비게이션 바 */
