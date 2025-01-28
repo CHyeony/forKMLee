@@ -51,6 +51,7 @@ body {
 }
 .contentMent{
     font-family: 'HanaLig';
+    font-weight: bold;
 }
 .nav-item {
     position: relative; /* 드롭다운 메뉴를 감싸는 부모 */
