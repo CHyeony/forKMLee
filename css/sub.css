@@ -49,7 +49,9 @@ body {
     display: flex;
     gap: 20px;
 }
-
+.contentMent{
+    font-family: 'HanaLig';
+}
 .nav-item {
     position: relative; /* 드롭다운 메뉴를 감싸는 부모 */
 }
