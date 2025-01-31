@@ -299,6 +299,12 @@ body {
 .sns-img{
 	width:10px;
 }
+a{
+    text-decoration: none;
+}
+footer  a{
+    color:#fff;
+}
 
 .header {
     background-color: rgba(0, 0, 0, 0.5); /* 검정 오버레이 (0.5는 투명도) */
