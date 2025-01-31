@@ -253,6 +253,35 @@ footer  a{
     text-align: center;
 }
 
+/* INPUT TABLE (QNA) */
+#qnaTable{
+    margin-left: 100px;
+
+}
+#qnaTable tr td{
+    text-align: left;;
+}
+textarea{
+    height: 200px;
+}
+td button{
+    background-color: #132562;
+    color: #fff;
+    padding: 7px 10px;
+    margin: 0;
+    font-family: 'HanaM';
+    border: 0px;
+}
+.mustInput{
+    color:rgb(180, 23, 23);
+}.qnaInput{
+    border:1px solid #b6b3b3;
+    padding: 6px 0px;
+    width: 700px;
+    margin: 0 20px;
+
+}
+/*qnaInput mustPut*/
 /*TEXT AREA*/
 /* 이미지 아래 텍스트 영역 스타일 */
 .infoContent {
