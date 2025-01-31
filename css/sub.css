@@ -20,10 +20,11 @@ body {
 a{
     text-decoration: none;
 }
-
-.footerA{
+footer  a{
     color:#fff;
 }
+
+
 /* 헤더 스타일 */
 .header {
     padding: 10px;
