@@ -17,6 +17,13 @@ body {
     background-color:#efefefa6;
 }
 
+a{
+    text-decoration: none;
+}
+
+.footerA{
+    color:#fff;
+}
 /* 헤더 스타일 */
 .header {
     padding: 10px;
