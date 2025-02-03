@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/sub.css">
+<link rel="stylesheet" href="/css/header.css?version=1.1">
+<link rel="stylesheet" href="/sub.css?version=1.1">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d9b110c9d35434b1c267523dbb19c387&libraries=services"></script>
+ 
+<style>
+  #map {
+    width: 100%;
+    height: 400px;
+  }
+</style>
+
+<title>회사 소개</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/script.js" defer></script>
+<script>
+    fetch('/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+  </script>
+</head>
+<body>
+	<div id="header"></div>
+    <section class="infoTitle">
+        <div class="infoTitle-images">
+            <img src="/images/mainBanner3.jpg" alt="Banner Image" class="hero-img" width="100%">
+        </div>
+        <div class="infoTitle-overlay">
+            <p class="infoTitle-text">찾아오시는 길</p>
+        </div>
+    </section>
+
+<!-- 이미지 아래 흰색 배경 부분 -->
+<section class="infoContent">
+    <div class="infoContent-text">
+        <div id="map"></div>
+        <div id="contentMent">
+          <p>사업장 주소 : 경기도 시흥시 월곶고잔3길 70-6 경인산업<br>
+              네이버지도, 티맵, 카카오네비 등 네비게이션어플 검색 -> 경인산업(시흥시 월곶동)</p>
+
+        </div>
+        <script>
+            // 지도 표시 영역
+            const mapContainer = document.getElementById('map'); 
+            const mapOption = {
+              center: new kakao.maps.LatLng(37.3947, 126.7352), // 기본 좌표
+              level: 3 // 확대 수준
+            };
+        
+            const map = new kakao.maps.Map(mapContainer, mapOption); // 지도 생성
+        
+            // 주소-좌표 변환 객체 생성
+            const geocoder = new kakao.maps.services.Geocoder();
+        
+            // 주소 검색 및 결과 처리
+            geocoder.addressSearch('경기도 시흥시 월곶고잔 3길 70-6', function(result, status) {
+              if (status === kakao.maps.services.Status.OK) {
+                const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+        
+             
+                map.setCenter(coords);
+        
+            
+                const marker = new kakao.maps.Marker({
+                  map: map,
+                  position: coords
+                });
+        
+                // 인포윈도우 추가
+                const infowindow = new kakao.maps.InfoWindow({
+                  content: '<div style="padding:5px;">경기도 시흥시 월곶고잔 3길 70-6 </div>'
+                });
+                infowindow.open(map, marker);
+              } else {
+                alert('주소를 찾을 수 없습니다.');
+              }
+            });
+          </script>
+    </div>
+</section>
+ <!-- FOOTER -->
+ <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>경인산업</h3>
+            <p>© 1994 경인산업. All rights reserved.</p>
+            <p>사업자등록번호 : 107-47-79725</p>
+        </div>
+        <div class="footer-section">
+            <h3>연락처</h3>
+            <ul>
+                <li>이메일: kiplastic@naver.com</li>
+                <li>소재지: 경기도 시흥시 월곶고잔3길 70-6(월곶동)</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>소셜 미디어</h3>
+            <ul class="social-links">
+                <li><a href="#"><img src="/images/pngwing.png" alt="Footer Image" class="sns-img">kiplasticz</a></li>
+
+            </ul>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
