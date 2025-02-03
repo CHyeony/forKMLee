@@ -52,7 +52,7 @@ body {
 }
 
 .normal {
-  font-size: 50px;
+  font-size: 70px;
   font-weight: bold;
   text-transform: uppercase;
   color: white;
@@ -80,11 +80,12 @@ body {
   animation: fadeIn 1s ease-out forwards; /* 애니메이션 추가 */
   opacity: 0;
   font-style: italic;
+  -webkit-text-stroke: 1px rgb(158, 158, 158); /* 흰색 테두리 추가 */
 }
 
 /* 클리핑 효과 적용된 글씨 (오른쪽) */
 .clipped {
-  font-size: 50px;
+  font-size: 70px;
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
@@ -117,14 +118,14 @@ body {
   <div class="banner">
     <!-- 왼쪽: 일반 흰색 글씨 -->
     <div class="text-left">
-      <h2 class="title normal"></h2>
-      <p class="subtitle normal">INDUSTRY</p>
+      <h2 class="title normal">KYEONGIN</h2>
+      <p class="subtitle normal"></p>
     </div>
   
     <!-- 오른쪽: 블러 배경 & 클리핑 효과 -->
     <div class="overlay">
-      <h2 class="title clipped overlayFont" data-text="KYEONGIN">KYEONGIN</h2>
-      <p class="subtitle clipped" data-text=""></p>
+      <h2 class="title clipped overlayFont" data-text=""></h2>
+      <p class="subtitle clipped overlayFont" data-text="INDUSTRY">INDUSTRY</p>
     </div>
   </div>
 
