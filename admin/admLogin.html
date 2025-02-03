@@ -22,26 +22,47 @@
             </div>
             <div class="right">
                 <div class="login-box">
-                    <h2>로그인</h2>
+                 
                     <div class="input-group">
                         <label for="email">ID</label>
                         <input type="email" id="email" placeholder="Enter your email">
                     </div>
                     <div class="input-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="********">
+                        <input type="password" id="password" placeholder="********" onkeyup="if(window.event.keyCode==13){login()}">
                     </div>
                     <div class="forgot-password">
-                        <a href="#">Forgot password?</a>
+                        <a href="#" onclick="forgetPwd()">Forgot password?</a>
                     </div>
-                    <button class="login-button">SIGN IN</button>
-                    >
+                    <button class="login-button" onclick="login()">SIGN IN</button>
+                    
                     <div class="register-link">
-                        Are you new? <a href="#">Create an Account</a>
+                        Are you new? <a href="#" onclick="createId()">Create an Account</a>
                     </div>
                 </div>
             </div>
         </div>
-    
+        <script>
+            function forgetPwd(){
+                alert("관리자 문의");
+            }
+
+            function login(){
+                var emailId = $("#email").val();
+                var passwd = $("#password").val();
+
+                if(emailId==='admin'&&passwd==='1234'){
+                    window.location.assign(window.location.origin + "/admin/admId.html");
+
+                    return;
+                }else{
+                    alert("ID 및 패스워드를 확인해주세요.");
+                    return false;
+                }
+            }
+            function createId(){
+                alert("관리자 문의");
+            }
+        </script>
     </body>
 </html>
