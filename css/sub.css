@@ -255,7 +255,7 @@ footer  a{
 
 /* INPUT TABLE (QNA) */
 #qnaTable{
-    margin-left: 100px;
+    margin: auto;
 
 }
 #qnaTable tr td{
@@ -264,13 +264,19 @@ footer  a{
 textarea{
     height: 200px;
 }
-td button{
+
+.navbtn{
     background-color: #132562;
     color: #fff;
     padding: 7px 10px;
     margin: 0;
     font-family: 'HanaM';
     border: 0px;
+}
+.bigB{
+    margin-top:20px;
+    padding:10px 20px;
+    font-weight: bold;
 }
 .mustInput{
     color:rgb(180, 23, 23);

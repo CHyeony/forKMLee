@@ -59,7 +59,7 @@
                 <td>
                     
                     <input type="text" id="address" class="qnaInput" placeholder="주소가 여기에 표시됩니다." readonly>
-                    <button onclick="execDaumPostcode()">주소 검색</button>
+                    <button onclick="execDaumPostcode()" class="navbtn">주소 검색</button>
                 </td>
             </tr>
             <tr>
@@ -78,6 +78,7 @@
                 <td><input type="file" class="qnaInput"></td>
             </tr>
           </table>
+          <button class="navbtn bigB" onclick="submitQna()">제출</button>
         </div>
         <script>
           function execDaumPostcode() {
@@ -86,6 +87,15 @@
                     document.getElementById("address").value = data.address; // 주소 입력
                 }
             }).open();
+          }
+
+          function submitQna(){
+            if($(".mustPut").val()==""){
+                alert("필수사항을 입력해주세요.");
+                return false;
+            }else{
+                alert("제출되었습니다.");
+            }
           }
         </script>
     </div>
