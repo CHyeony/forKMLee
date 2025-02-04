@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
+<link rel="stylesheet" href="css/style.css">
 <style>
 
   /* 애니메이션 효과 */
@@ -113,15 +113,48 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+
 </style>
 
 <title>회사 소개</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/script.js" defer></script>
+<!-- <link rel="stylesheet" href="css/style.css"> -->
 
 </head>
 <body>
+  <header>
+    <div class="navbar">
+     
+      <div class="nav-links">
+          <div class="nav-item">
+              <a href="#">회사 소개</a>
+              <ul class="dropdown">
+                  <li><a href="#" onclick="javascript:goPage('info');">경인산업 소개</a></li>
+                  <li><a href="#" onclick="javascript:goPage('map');">찾아오시는 길</a></li>
+              </ul>
+          </div>
+          <div class="nav-item">
+              <a href="/info/sb.html">설비 현황</a>
+          </div>
+          <div class="nav-item">
+              <a href="/info/service.html">사출서비스 안내</a>
+          </div>
+          <div class="nav-item">
+              <a href="#">제품안내</a>
+              <ul class="dropdown">
+                  <li><a href="#">생산제품</a></li>
+                  <li><a href="#">심패드</a></li>
+              </ul>
+          </div>
+          <div class="nav-item">
+              <a href="/info/qna.html">문의사항</a>
+          </div>
+      </div>
+    </div>
+  </header>
   <div class="banner">
+    
     <!-- 왼쪽: 일반 흰색 글씨 -->
     <div class="text-left">
       <h2 class="title normal">KYEONG</h2>
