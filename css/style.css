@@ -387,3 +387,8 @@ footer  a{
 .nav-item:hover .dropdown {
     display: block;
 }
+
+
+.footText >p > a{
+    text-decoration: none;
+}
