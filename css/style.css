@@ -303,6 +303,7 @@ body {
 .footer-section {
   flex: 1;
   padding: 10px 42px;
+  float: left;
 }
 
 .footer-section h3 {
