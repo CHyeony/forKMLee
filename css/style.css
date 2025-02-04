@@ -281,81 +281,50 @@ body {
 /* FOOTER */
 /* Footer 스타일 */
 .footer {
-    background-color: #132562; /* Yves Blue 색상 */
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: rgb(187, 187, 187);
+  padding: 15px 0;
+  text-align: left;
+  font-size: 14px;
+  z-index: 1000;
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footer-section {
-    flex: 1;
-    min-width: 250px;
-    margin: 20px;
+  flex: 1;
+  padding: 10px 42px;
 }
 
 .footer-section h3 {
-    font-size: 12px;
-    margin-bottom: 15px;
-    color: #f2f1ef; /* 밝은 색상 */
-    text-align: left;
-}
-
-.footer-section p, .footer-section ul {
-    font-size: 10px;
-    line-height: 1.8;
-    color: #bcc2c8;
-    text-align: left;
+  margin-bottom: 10px;
 }
 
 .footer-section ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
-.footer-section ul li {
-    margin-bottom: 10px;
+.footer-section a {
+  color: rgb(187, 187, 187);
+  text-decoration: none;
 }
 
-.footer-section .social-links {
-   list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: flex-start;
+.sns-img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
 }
-
-.footer-section .social-links li {
-   /*  margin: 0 15px; */
-   margin-right:15px;
-}
-
-.footer-section .social-links a {
-    color: #f2f1ef;
-    text-decoration: none;
-    font-size: 10px;
-    transition: color 0.3s ease;
-}
-
-.footer-section .social-links a:hover {
-    color: #173187; /* Yves Blue 색상 */
-}
-.sns-img{
-	width:10px;
-}
-a{
-    text-decoration: none;
-}
-footer  a{
-    color:#fff;
-}
-
+/* FOOTER 끝 */
 .header {
     background-color: rgba(0, 0, 0, 0.5); /* 검정 오버레이 (0.5는 투명도) */
     position: fixed;
@@ -389,6 +358,3 @@ footer  a{
 }
 
 
-.footText >p > a{
-    text-decoration: none;
-}
