@@ -127,16 +127,19 @@ body {
 <!-- <link rel="stylesheet" href="css/style.css"> -->
 <script>
   function goPage(url){
-    		var targetUrl = "/info/"+ url + ".html";
-    		//alert(targetUrl);
-    		location.href=targetUrl;	
-    	}
+    var targetUrl = "/info/"+ url + ".html";
+    //alert(targetUrl);
+    location.href=targetUrl;	
+  }
+
 </script>
 </head>
 <body>
   <header>
     <div class="navbar">
-     
+      <div class="hamburger-menu" onclick="toggleMenu()">
+        ☰
+      </div>
       <div class="nav-links">
           <div class="nav-item">
               <a href="#">회사 소개</a>

@@ -20,3 +20,19 @@
 //     images[currentImageIndex].classList.add('active');
 //     setInterval(changeImage, 3000); // 3000ms(3초)마다 이미지 변경
 // };
+
+function toggleMenu() {
+    document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger-menu");
+        const navLinks = document.querySelector(".nav-links");
+    
+        hamburger.addEventListener("click", function () {
+            if (navLinks.style.display === "flex") {
+                navLinks.style.display = "none";
+            } else {
+                navLinks.style.display = "flex";
+            }
+        });
+    });
+    
+}
