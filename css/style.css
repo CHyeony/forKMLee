@@ -367,8 +367,7 @@ body {
 
 
 /* 모바일 메뉴 */
-
-/* 햄버거 메뉴 버튼 */
+/* 기본적으로 햄버거 메뉴 숨기기 */
 .hamburger-menu {
     display: none;
     font-size: 30px;
@@ -379,11 +378,30 @@ body {
     top: 15px;
     z-index: 1100;
 }
-
+.onlyM{
+    display: none;
+}
 /* 모바일 버전에서 네비게이션 숨기기 */
 @media screen and (max-width: 768px) {
+
+    /*기본 틀 맞추기*/
+    body, html{
+        overflow:hidden;width:100vw; height:100vh; 
+    }
+    .banner{
+         overflow:auto; width:100vw; height:100vh; 
+        /* position: absolute;
+        top:0;    bottom:0;
+        left:0; right:0;
+        
+        overflow: auto;
+        padding: 10px; */
+    }
+
+
+    /*모바일 메뉴*/
     .nav-links {
-        display: none;
+        display: none; /* 처음에는 숨김 */
         flex-direction: column;
         width: 100%;
         position: absolute;
@@ -394,7 +412,8 @@ body {
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex !important; /* 중요한 스타일 적용 */
+        flex-direction: column;
     }
 
     .nav-item {
@@ -408,6 +427,26 @@ body {
     }
 
     .hamburger-menu {
-        display: block;
+        display: block; /* 모바일에서는 햄버거 메뉴 보이도록 */
     }
+    .footer-section {
+        flex: 1;
+        /* padding: 10px 42px; */
+        padding: 1px 4.5%;
+        float: left;
+        display: flex
+    ;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: space-between;
+        justify-content: flex-end;
+    }
+    .onlyPC{
+        display: none;
+    }
+    .onlyM{
+        display:block;
+    }
+    
+
 }
