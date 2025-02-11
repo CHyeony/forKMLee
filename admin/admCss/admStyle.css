@@ -4,7 +4,12 @@
     font-weight: normal;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'GenKJwajinOTF-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GenKJwajinOTF-Rg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 @font-face {
     font-family: 'HanaM';
     src: url('/font/Hana2-Medium.ttf') format('truetype');
@@ -281,10 +286,14 @@ body {
 
     /*글자 색*/
     .green {
-        color: green;
+        color: rgb(0, 77, 0);
     }
     
     .red {
-        color: red;
+        color: rgb(122, 11, 11);
         
     }
+    .blue{
+        color:#072fa5;
+    }
+    

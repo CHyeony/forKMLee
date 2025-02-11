@@ -47,7 +47,7 @@ function renderTable(category, page = 1) {
     const pagedData = filteredData.slice(startIndex, startIndex + rowsPerPage);
 
     pagedData.forEach(item => {
-        const ansDateClass = item.ansYN === "답변완료" ? "green" : "red";
+        const ansDateClass = item.ansYN === "답변완료" ? "green" : "blue";
         tbody.append(`
             <tr>
                 <td>${item.no}</td>
@@ -157,6 +157,16 @@ $(document).ready(function () {
     font-size: 15px;
     font-family: 'GangwonEdu_OTFBoldA';
     margin: 10px 0px;
+    width: 100%; /* select 박스가 부모 요소의 크기에 맞게 확장 */
+    box-sizing: border-box; /* padding과 border를 너비에 포함시켜 깨짐 방지 */
+
+}
+.sch>select {
+    font-size: 15px;
+    font-family: 'GangwonEdu_OTFBoldA'; /* 동일한 폰트 적용 */
+    padding: 7px 10px;
+   
+    box-sizing: border-box; /* padding과 border가 포함되도록 */
 }
 .page {
         cursor: pointer;
@@ -166,6 +176,7 @@ $(document).ready(function () {
         font-weight: bold;
         color: #007bff;
     }
+    body{background-color:#606075;}
 </style>
 
     
@@ -180,7 +191,7 @@ $(document).ready(function () {
     <div class="contentZone flex-1 p-4 ml-64">
         <h1 class="text-2xl font-bold">문의 내역</h1>
         <div class="sch">
-            <select id="schOption" name="schOption">
+            <select id="schOption" name="schOptionBox">
                 <option value="%">전체</option>
                 <option value="subject">제목</option>
                 <option value="regMan">작성자</option>

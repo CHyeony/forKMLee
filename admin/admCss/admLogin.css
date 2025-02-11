@@ -6,6 +6,12 @@
 }
 
 @font-face {
+    font-family: 'GenKJwajinOTF-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GenKJwajinOTF-Rg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
     font-family: 'HanaM';
     src: url('/font/Hana2-Medium.ttf') format('truetype');
 }
@@ -22,7 +28,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: HanaM;
+    font-family: GangwonEdu_OTFBoldA;
 }
 
 body {
