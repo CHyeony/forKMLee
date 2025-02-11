@@ -1,40 +1,98 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="/css/header.css">
-</head>
-<body>
-<!-- header.jsp -->
-<header class="header">
-    <div class="navbar">
-        <span style="padding-left:44px;"><a href="../">경인산업 관리자</a></span>
-        <div class="nav-links">
-            <div class="nav-item">
-                <a href="#">내용변경</a>
-                <ul class="dropdown">
-                    <li><a href="/info/info.html">경인산업 소개말</a></li>
-                    <li><a href="/info/map.html">설비현황 관리</a></li>
-                    <li><a href="/info/map.html">사출서비스 안내</a></li>
-                </ul>
-            </div>
-            <div class="nav-item">
-                <a href="/info/sb.html">계정관리</a>
-            </div>
-            <div class="nav-item">
-                <a href="#">제품</a>
-                <ul class="dropdown">
-                    <li><a href="#">생산제품</a></li>
-                    <li><a href="#">심패드</a></li>
-                </ul>
-            </div>
-            <div class="nav-item">
-                <a href="/info/qna.html">문의내역</a>
-            </div>
-        </div>
-    </div>
-</header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Menu</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script src="/js/script.js" defer></script>
+    <style>
+        @font-face {
+            font-family: 'HanaM';
+            src: url('/font/Hana2-Medium.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'HanaLig';
+            src: url('/font/Hana2-Light.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'HanaBold';
+            src: url('/font/Hana2-Bold.ttf') format('truetype');
+        }
 
+        body{
+            font-family: 'HanaM';
+        }
+        .menu-item.active {
+            background-color: #405683;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .bg-white {
+            background-color:#22222d;
+            color:#c5c5c5;
+            font-family: 'HanaLig';
+        }
+
+    </style>
+    <script>
+       document.addEventListener("DOMContentLoaded", function() {
+    const currentPath = window.location.pathname;
+    const menuItems = document.querySelectorAll(".menu-item");
+
+    menuItems.forEach(item => {
+        if (currentPath.includes(item.dataset.path)) { // 현재 경로가 포함되는지 검사
+            item.classList.add("active");
+        }
+    });
+});
+
+
+    </script>
+</head>
+<div class="w-64 h-screen bg-white shadow-md flex flex-col p-4">
+    <!-- 검색창 -->
+    <div class="relative mb-4">
+        <input type="text" placeholder="SEARCH" class="w-full p-2 border rounded-md pl-8">
+        <svg class="absolute left-2 top-2 w-5 h-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M8 2a6 6 0 016 6c0 1.39-.44 2.67-1.18 3.73l3.45 3.45a1 1 0 11-1.42 1.42l-3.45-3.45A5.97 5.97 0 018 14a6 6 0 110-12zm0 2a4 4 0 100 8 4 4 0 000-8z"/>
+        </svg>
+    </div>
+    
+    <!-- 타이틀 -->
+    <h1 class="text-lg font-bold border-b pb-2 mb-4">관리자페이지</h1>
+    
+    <!-- 메뉴 리스트 -->
+    <div class="mb-4">
+        <h2 class="text-md font-semibold mb-2">내용 변경</h2>
+        <ul>
+            <a href="#" onclick="goPage('contents','intro')"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/page1.html">경인산업 소개말</li></a>
+            <a href="#" onclick="goPage('contents','settings')"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/page2.html">설비현황 관리</li></a>
+            <a href="#" onclick="goPage('contents','service')"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/page3.html">사출서비스 안내</li></a>
+        </ul>
+    </div>
+    <div class="mb-4">
+        <h2 class="text-md font-semibold mb-2">계정관리</h2>
+        <ul>
+            <li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/account.html">계정관리</li>
+        </ul>
+    </div>
+    <div class="mb-4">
+        <h2 class="text-md font-semibold mb-2">제품</h2>
+        <ul>
+            <a href="#" onclick="goPage('products','product')"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/product.html">생산제품</li></a>
+            <a href="#" onclick="goPage('products','sympad')"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/sympad.html">심패드</li></a>
+        </ul>
+    </div>
+    <div class="mb-4">
+        <h2 class="text-md font-semibold mb-2">문의내역</h2>
+        <ul>
+            <a href="#" onclick="goPage('admQna','qnaList')"></a><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/qnaList.html">문의 내역</li></ul>
+        </ul>
+    </div>
+    
+    <!-- 마이페이지 -->
+    <h2 class="text-md font-semibold menu-item" data-path="/mypage.html">MYPAGE</h2>
+    <h2 class="text-md font-semibold">로그아웃</h2>
+</div>
 </body>
 </html>
