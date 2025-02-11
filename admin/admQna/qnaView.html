@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/admin/admCss/admStyle.css">
+
+
+<title>문의내역</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/script.js" defer></script>
+
+<script>
+    fetch('/admin/admMenu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+
+
+
+
+</script>
+<style>
+    
+</style>
+
+    
+</head>
+<body class="flex">
+
+    <!-- 사이드바 (헤더) -->
+    <div id="header" class="w-64 h-screen bg-white shadow-md fixed left-0 top-0">
+    </div>
+
+    <!-- 컨텐츠 영역 -->
+    <div class="contentZone flex-1 p-4 ml-64">
+        <h1 class="text-2xl font-bold">문의 상세</h1>
+       
+    </div>
+
+</body>
+</html>
