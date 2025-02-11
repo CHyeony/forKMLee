@@ -211,7 +211,8 @@ body {
         margin: 0 auto;
         color: #efefefa6;
         position: absolute;
-        top: 30%;
+        top: 37%;
+        padding: 0 73px;
        
     }
     
@@ -221,9 +222,24 @@ body {
         width:65%;
         height: 100vh;
         background:  linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 61%) ),url('/images/pixImgCut_1.jpg') no-repeat center center/cover;
+        position: relative;
+        
     }
 
-
+    .planZone{
+        position: absolute;
+        top:50%;
+        z-index: 1000; /* 다른 요소들보다 위에 표시되도록 설정 */
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .innerPlan{
+        font-family: 'HanaLig';
+        padding:20px 30px;
+        color:#efefefa6;
+    }
+  
 
     /*공통 버튼*/
     .adminBtn_1{
