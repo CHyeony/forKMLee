@@ -32,22 +32,18 @@
             color:#c5c5c5;
             font-family: 'HanaLig';
         }
-
-    </style>
-    <script>
-       document.addEventListener("DOMContentLoaded", function() {
-    const currentPath = window.location.pathname;
-    const menuItems = document.querySelectorAll(".menu-item");
-
-    menuItems.forEach(item => {
-        if (currentPath.includes(item.dataset.path)) { // 현재 경로가 포함되는지 검사
-            item.classList.add("active");
+        .menu-item:hover{
+            background-color:#c5c5c5;
+            color:#22222d;
+            font-weight: bold;
         }
-    });
-});
-
-
-    </script>
+        .active{
+            background-color:#c5c5c5;
+            color:#22222d;
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <div class="w-64 h-screen bg-white shadow-md flex flex-col p-4">
     <!-- 검색창 -->
@@ -65,9 +61,9 @@
     <div class="mb-4">
         <h2 class="text-md font-semibold mb-2">내용 변경</h2>
         <ul>
-            <a href="#" onclick="goPage('contents','intro')"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/page1.html">경인산업 소개말</li></a>
-            <a href="#" onclick="goPage('contents','settings')"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/page2.html">설비현황 관리</li></a>
-            <a href="#" onclick="goPage('contents','service')"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/page3.html">사출서비스 안내</li></a>
+            <a href="#" onclick="goPage('contents','intro');"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/page1.html">경인산업 소개말</li></a>
+            <a href="#" onclick="goPage('contents','settings');"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/page2.html">설비현황 관리</li></a>
+            <a href="#" onclick="goPage('contents','service');"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/page3.html">사출서비스 안내</li></a>
         </ul>
     </div>
     <div class="mb-4">
@@ -79,20 +75,43 @@
     <div class="mb-4">
         <h2 class="text-md font-semibold mb-2">제품</h2>
         <ul>
-            <a href="#" onclick="goPage('products','product')"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/product.html">생산제품</li></a>
-            <a href="#" onclick="goPage('products','sympad')"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/sympad.html">심패드</li></a>
+            <a href="#" onclick="goPage('products','product');"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/product.html">생산제품</li></a>
+            <a href="#" onclick="goPage('products','sympad');"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/sympad.html">심패드</li></a>
         </ul>
     </div>
     <div class="mb-4">
         <h2 class="text-md font-semibold mb-2">문의내역</h2>
         <ul>
-            <a href="#" onclick="goPage('admQna','qnaList')"></a><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/qnaList.html">문의 내역</li></ul>
+            <a href="#" onclick="goPage('admQna','qnaList');">
+                <li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/admin/admQna/qnaList.html">문의 내역</li>
+            </a>            
         </ul>
+        
     </div>
     
     <!-- 마이페이지 -->
     <h2 class="text-md font-semibold menu-item" data-path="/mypage.html">MYPAGE</h2>
     <h2 class="text-md font-semibold">로그아웃</h2>
 </div>
+
+<script>
+ $(document).ready(function() {
+    const currentPath = window.location.pathname;  // 전체 경로를 가져옴
+    console.log("Current Path: ", currentPath); // 경로 로그
+
+    $(".menu-item").each(function() {
+        const item = $(this);
+        console.log("Menu Item: ", item); // 메뉴 아이템 로그
+        console.log("Item Path: ", item.data("path")); // 메뉴 아이템의 data-path 로그
+        if (currentPath.includes(item.data("path"))) { // 경로 비교
+            item.addClass("active");
+            console.log("Active Item: ", item); // 활성화된 아이템 로그
+        }
+    });
+});
+
+  
+      
+  </script>
 </body>
 </html>
