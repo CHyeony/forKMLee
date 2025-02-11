@@ -1,4 +1,11 @@
 @font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'HanaM';
     src: url('/font/Hana2-Medium.ttf') format('truetype');
 }
@@ -13,7 +20,7 @@
 
 /* 기본 스타일 */
 body {
-	font-family: 'HanaM';
+	font-family: 'GangwonEdu_OTFBoldA';
     margin: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -23,7 +30,7 @@ body {
 /* 헤더 스타일 */
 .header {
     padding: 10px;
-    font-family: 'HanaM';
+    font-family: 'GangwonEdu_OTFBoldA';
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -32,7 +39,7 @@ body {
     float: right;
     align-items: center;
     margin-top: 19.92px;
-    font-family: 'HanaM';
+    font-family: 'GangwonEdu_OTFBoldA';
     width: 63%;
 }
 
@@ -194,13 +201,13 @@ body {
         
     }
     .leftDiv > h2{
-        font-family: 'HanaM';
+        font-family: 'GangwonEdu_OTFBoldA';
         margin-left: 25px;
         padding-top: 4px;
         color: #d1d1d1;
     }
     .footMent{
-        font-family: 'HanaM';
+        font-family: 'GangwonEdu_OTFBoldA';
         color: #d1d1d1;
         margin-top: auto;
         font-size: 11px;
@@ -209,7 +216,7 @@ body {
         list-style: none;
     }
     .middleMent{
-        font-family: 'HanaLig';
+        font-family: 'GangwonEdu_OTFBoldA';
         margin: 0 auto;
         color: #efefefa6;
         position: absolute;
@@ -244,7 +251,7 @@ body {
 
     }
     .innerPlan{
-        font-family: 'HanaLig';
+        font-family: 'GangwonEdu_OTFBoldA';
         padding:20px 30px;
         color:#efefefa6;
         
@@ -253,7 +260,7 @@ body {
 
     /*공통 버튼*/
     .adminBtn_1{
-        font-family: 'HanaM';
+        font-family: 'GangwonEdu_OTFBoldA';
         color: #efefefa6;
         background-color: #22222d;
         border: 1px solid #efefefa6;
@@ -262,7 +269,7 @@ body {
         cursor: pointer;
     }
     .adminBtn_2{
-        font-family: 'HanaM';
+        font-family: 'GangwonEdu_OTFBoldA';
         color: #22222d;
         background-color: #00000036;
         /* border: 1px solid #22222d; */

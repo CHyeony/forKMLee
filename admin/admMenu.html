@@ -18,9 +18,15 @@
             font-family: 'HanaBold';
             src: url('/font/Hana2-Bold.ttf') format('truetype');
         }
+        @font-face {
+            font-family: 'GangwonEdu_OTFBoldA';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 
         body{
-            font-family: 'HanaM';
+            font-family: 'GangwonEdu_OTFBoldA';
         }
         .menu-item.active {
             background-color: #80a0df;
@@ -31,7 +37,7 @@
         .bg-white {
             background-color:#22222d;
             color:#c5c5c5;
-            font-family: 'HanaLig';
+            font-family: 'GangwonEdu_OTFBoldA';
         }
         .menu-item:hover{
             background-color:#c5c5c5;
@@ -52,7 +58,7 @@
     </div>
     
     <!-- 타이틀 -->
-    <h1 class="text-lg font-bold border-b pb-2 mb-4">관리자페이지</h1>
+    <h1 class="text-lg font-bold border-b pb-2 mb-4"><a href='/admin/adminWelcome.html'>관리자페이지</a></h1>
     
     <!-- 메뉴 리스트 -->
     <div class="mb-4">
