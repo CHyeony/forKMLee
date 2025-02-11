@@ -33,6 +33,7 @@ body {
     align-items: center;
     margin-top: 19.92px;
     font-family: 'HanaM';
+    width: 63%;
 }
 
 
@@ -190,6 +191,7 @@ body {
         display: flex;
         flex-direction: column;
         position: relative;
+        
     }
     .leftDiv > h2{
         font-family: 'HanaM';
@@ -212,8 +214,8 @@ body {
         color: #efefefa6;
         position: absolute;
         top: 37%;
-        padding: 0 73px;
-       
+        font-size: 20px;
+        transform: translate(137%, 0%);
     }
     
     
@@ -227,17 +229,23 @@ body {
     }
 
     .planZone{
+        font-size: 23px;
         position: absolute;
-        top:50%;
-        z-index: 1000; /* 다른 요소들보다 위에 표시되도록 설정 */
+        top: 50%;
+        z-index: 1000;
         display: flex;
         flex-wrap: wrap;
+        text-align: center;
         background-color: rgba(0, 0, 0, 0.5);
+        transform: translate(50%, 50%);
+        padding: 28px 81px;
+
     }
     .innerPlan{
         font-family: 'HanaLig';
         padding:20px 30px;
         color:#efefefa6;
+        
     }
   
 
@@ -248,4 +256,5 @@ body {
         background-color: #22222d;
         border: 1px solid #efefefa6;
         padding: 10px 50px;
+        font-size: 20px;
     }
