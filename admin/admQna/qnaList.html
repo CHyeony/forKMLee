@@ -47,12 +47,13 @@ function renderTable(category, page = 1) {
     const pagedData = filteredData.slice(startIndex, startIndex + rowsPerPage);
 
     pagedData.forEach(item => {
+        const ansDateClass = item.ansYN === "답변완료" ? "green" : "red";
         tbody.append(`
             <tr>
                 <td>${item.no}</td>
-                <td>${item.subject}</td>
+                <td><a href='/admin/admQna/qnaView.html'>${item.subject}</a></td>
                 <td>${item.regDate}</td>
-                <td>${item.ansYN}</td>
+                <td class="${ansDateClass}">${item.ansYN}</td>
                 <td>${item.ansDate}</td>
                 <td>${item.regiMan}</td>
             </tr>
@@ -139,6 +140,15 @@ $(document).ready(function () {
 #listTables{
     width: 100%;
     text-align: center;
+}
+#listTables>thead>tr{
+    background: #22222d;
+    color: #fff;
+    font-family: 'HanaLig';
+}
+#listTables>tbody>tr:nth-child(even){
+    background: #e7e5e5;
+    font-family: 'HanaLig';
 }
        
 .sch{
