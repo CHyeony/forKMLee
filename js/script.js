@@ -36,3 +36,10 @@ function toggleMenu() {
     });
     
 }
+
+/* 관리자 */
+function admLogout(){
+    if(confirm("로그아웃 하시겠습니까?")){
+        location.href="/admin/admLogin.html";
+	}
+}

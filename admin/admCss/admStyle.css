@@ -29,30 +29,17 @@ body {
 
 /* 네비게이션 바 */
 .navbar {
-    display: flex;
-    justify-content: space-between; /* 로고와 메뉴 양쪽 배치 */
-    align-items: center; /* 세로 중앙 정렬 */
-}
-
-/* 로고 */
-.navbar span {
-    color: #fff; /* 로고 텍스트 색상 */
-    font-size: 23px; /* 로고 텍스트 크기 */
-    font-weight: bold;
+    float: right;
+    align-items: center;
+    margin-top: 19.92px;
     font-family: 'HanaM';
 }
-.navbar span a{
-	text-decoration: none;
-    color: #fff;
-    padding-right:35px;
-    font-size: 23px; /* 메뉴 폰트 크기 */
-    transition: color 0.3s ease;
-}
+
 
 /* 메뉴 링크 */
 .nav-links a {
     text-decoration: none;
-    color: #fff;
+    color: #efefefa6;
     padding-right:35px;
     font-size: 16px; /* 메뉴 폰트 크기 */
     transition: color 0.3s ease;
@@ -60,22 +47,23 @@ body {
 /* 네비게이션 메뉴 스타일 */
 .nav-links {
     display: flex;
-    gap: 20px;
-    padding: 0 33px;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 7px 50px;
 }
 
 .nav-item {
     position: relative; /* 드롭다운 메뉴를 감싸는 부모 */
 }
-
 /* 메뉴 링크 기본 스타일 */
 .nav-item a {
     text-decoration: none;
-    color: #fff;
+    color: #efefefa6;
     padding: 10px;
     font-size: 18px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 
 /* 메뉴 항목에 마우스를 올리면 색상 변경 */
 .nav-item a:hover {
@@ -188,3 +176,60 @@ body {
     display: block;
 }
 
+
+/* Welcome Page */
+    .divSection{
+        display: flex;
+        flex-direction: row;
+    }
+    /*왼쪽*/
+    .leftDiv{
+        width: 35%;
+        height: 100vh;
+        background-color: #22222d;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .leftDiv > h2{
+        font-family: 'HanaM';
+        margin-left: 25px;
+        padding-top: 4px;
+        color: #d1d1d1;
+    }
+    .footMent{
+        font-family: 'HanaM';
+        color: #d1d1d1;
+        margin-top: auto;
+        font-size: 11px;
+    }
+    .footMent ul{
+        list-style: none;
+    }
+    .middleMent{
+        font-family: 'HanaLig';
+        margin: 0 auto;
+        color: #efefefa6;
+        position: absolute;
+        top: 30%;
+       
+    }
+    
+    
+    /*오른쪽*/
+    .rightDiv{
+        width:65%;
+        height: 100vh;
+        background:  linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 61%) ),url('/images/pixImgCut_1.jpg') no-repeat center center/cover;
+    }
+
+
+
+    /*공통 버튼*/
+    .adminBtn_1{
+        font-family: 'HanaM';
+        color: #efefefa6;
+        background-color: #22222d;
+        border: 1px solid #efefefa6;
+        padding: 10px 50px;
+    }

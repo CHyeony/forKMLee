@@ -4,28 +4,65 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/admin/admCss/admStyle.css">
 
-<style>
-  #map {
-    width: 100%;
-    height: 400px;
-  }
-</style>
-
 <title>회사 소개</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/script.js" defer></script>
 <script>
-    fetch('/admin/admMenu.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header').innerHTML = data;
-      });
+    // fetch('/admin/admMenu.html')
+    //   .then(response => response.text())
+    //   .then(data => {
+    //     document.getElementById('header').innerHTML = data;
+    //   });
   </script>
 </head>
 <body>
 	<div id="header"></div>
-    <section class="infoTitle">
-      
+    <section class="divSection">
+      <div class="leftDiv"> 
+          <h2>경인산업</h2>
+          <div class="middleMent">
+            <span id="userName">admin</span>님, 안녕하세요.
+            <br>
+            <button class="adminBtn_1" onclick="javascript:admLogout();">로그아웃</button>
+          </div>
+          <div class="footMent">
+            <ul>
+              <li>© 1994 경인산업. All rights reserved.</li>
+              <li>사업자등록번호 : 107-47-79725</li>
+              <li>icons by Icons8.com</li>
+            </ul>
+          </div>
+      </div>
+      <div class="rightDiv">
+        <div class="navbar"> 
+          <div class="nav-links">
+              <div class="nav-item">
+                  <a href="#">내용변경</a>
+                  <ul class="dropdown">
+                      <li><a href="/info/info.html">경인산업 소개말</a></li>
+                      <li><a href="/info/map.html">설비현황 관리</a></li>
+                      <li><a href="/info/map.html">사출서비스 안내</a></li>
+                  </ul>
+              </div>
+              <div class="nav-item">
+                  <a href="/info/sb.html">계정관리</a>
+              </div>
+              <div class="nav-item">
+                  <a href="#">제품</a>
+                  <ul class="dropdown">
+                      <li><a href="#">생산제품</a></li>
+                      <li><a href="#">심패드</a></li>
+                  </ul>
+              </div>
+              <div class="nav-item">
+                  <a href="/info/qna.html">문의내역</a>
+              </div>
+          </div>
+          <div>
+
+          </div>
+      </div>
+      </div>
     </section>
 
 <!-- 이미지 아래 흰색 배경 부분 -->
