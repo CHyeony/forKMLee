@@ -11,15 +11,27 @@
 
 <script>
     fetch('/admin/admMenu.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header').innerHTML = data;
-      });
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('header').innerHTML = data; // HTML 삽입 완료
+        return new Promise(resolve => setTimeout(resolve, 0)); // DOM 업데이트 기다리기
+    })
+    .then(() => {
+        $("#item6").addClass("active"); // jQuery로 클래스 추가
+    })
+    .catch(error => console.error('Error loading menu:', error));
+
 
     const fileList = [];
 
     $(document).ready(function () {
+        const liText = $("#item6").text();
+        console.log(liText); // "문의 내역"
+        console.log("Document is ready");
+    const currentPath = window.location.pathname;  // 전체 경로를 가져옴
+    console.log("Current Path: ", currentPath); // 경로 로그
         ReadData();
+
     });
 
     function ReadData(){
@@ -113,6 +125,7 @@
                   <p>상태 : <span id="ansYn"> 답변 대기 </span></p>
               </div>
               <div class="buttonZone">
+                    <a href="#" onclick="javascript:history.back();" style="float: left;">목록</a>
                   <button class="adminBtn_1" onclick="qnaSubmit();"> 답변 완료하기 </button>
               </div>
         </div>

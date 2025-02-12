@@ -32,7 +32,7 @@
             background-color: #80a0df;
             color:#22222d;
             font-weight: bold;
-            transition: background-color 0.3s ease-in-out;
+            
         }
         .bg-white {
             background-color:#22222d;
@@ -49,14 +49,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <div class="w-64 h-screen bg-white shadow-md flex flex-col p-4">
-    <!-- 검색창 -->
-    <div class="relative mb-4">
-        <input type="text" placeholder="SEARCH" class="w-full p-2 border rounded-md pl-8">
-        <svg class="absolute left-2 top-2 w-5 h-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M8 2a6 6 0 016 6c0 1.39-.44 2.67-1.18 3.73l3.45 3.45a1 1 0 11-1.42 1.42l-3.45-3.45A5.97 5.97 0 018 14a6 6 0 110-12zm0 2a4 4 0 100 8 4 4 0 000-8z"/>
-        </svg>
-    </div>
-    
+   
     <!-- 타이틀 -->
     <h1 class="text-lg font-bold border-b pb-2 mb-4"><a href='/admin/adminWelcome.html'>관리자페이지</a></h1>
     
@@ -64,9 +57,9 @@
     <div class="mb-4">
         <h2 class="text-md font-semibold mb-2">내용 변경</h2>
         <ul>
-            <a href="#" onclick="goPage('contents','intro');"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/page1.html">경인산업 소개말</li></a>
-            <a href="#" onclick="goPage('contents','settings');"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/page2.html">설비현황 관리</li></a>
-            <a href="#" onclick="goPage('contents','service');"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/page3.html">사출서비스 안내</li></a>
+            <a href="#" onclick="goPage('admInfo','introEdit');"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" id="item1" data-path="/intro.html">경인산업 소개말</li></a>
+            <a href="#" onclick="goPage('admInfo','settings');"><li class="py-2 px-4 rounded-md cursor-pointer menu-item item2" data-path="/page2.html">설비현황 관리</li></a>
+            <a href="#" onclick="goPage('admInfo','service');"><li class="py-2 px-4 rounded-md cursor-pointer menu-item item3" data-path="/page3.html">사출서비스 안내</li></a>
         </ul>
     </div>
     <div class="mb-4">
@@ -78,15 +71,15 @@
     <div class="mb-4">
         <h2 class="text-md font-semibold mb-2">제품</h2>
         <ul>
-            <a href="#" onclick="goPage('products','product');"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/product.html">생산제품</li></a>
-            <a href="#" onclick="goPage('products','sympad');"><li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="/sympad.html">심패드</li></a>
+            <a href="#" onclick="goPage('products','product');"><li class="py-2 px-4 rounded-md cursor-pointer menu-item item4" data-path="/product.html">생산제품</li></a>
+            <a href="#" onclick="goPage('products','sympad');"><li class="py-2 px-4 rounded-md cursor-pointer menu-item item5" data-path="/sympad.html">심패드</li></a>
         </ul>
     </div>
     <div class="mb-4">
         <h2 class="text-md font-semibold mb-2">문의내역</h2>
         <ul>
             <a href="#" onclick="goPage('admQna','qnaList');">
-                <li class="py-2 px-4 rounded-md cursor-pointer menu-item" data-path="admQna">문의 내역</li>
+                <li class="py-2 px-4 rounded-md cursor-pointer menu-item" id="item6" data-path="admQna">문의 내역</li>
             </a>            
         </ul>
         

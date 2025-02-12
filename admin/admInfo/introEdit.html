@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/admin/admCss/admStyle.css">
 
 
-<title>문의내역</title>
+<title>경인산업 소개말 내역</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/js/script.js" defer></script>
 
@@ -17,7 +17,7 @@
         return new Promise(resolve => setTimeout(resolve, 0)); // DOM 업데이트 기다리기
     })
     .then(() => {
-        $("#item6").addClass("active"); // jQuery로 클래스 추가
+        $("#item1").addClass("active"); // jQuery로 클래스 추가
     })
     .catch(error => console.error('Error loading menu:', error));
 
@@ -122,41 +122,7 @@ $(document).ready(function () {
 
 </script>
 <style>
-       .tab {
-            padding: 10px 75px;
-            cursor: pointer;
-            display: inline-block;
-            border: 1px solid #ddd;
-            background-color: #f8f8f8;
-            margin-right: 11px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-        #tabs{
-            border-bottom: 2px solid #22222d;
-            width: 100%;
-            text-align: center;
-            
-        }
-        .tab.activeTab {
-            background-color: #22222d;
-            font-weight: bold;
-            color: #fff;
-        }
-#listTables{
-    width: 100%;
-    text-align: center;
-}
-#listTables>thead>tr{
-    background: #22222d;
-    color: #fff;
-    font-family: 'GangwonEdu_OTFBoldA';
-}
-#listTables>tbody>tr:nth-child(even){
-    background: #e7e5e5;
-    
-}
-       
+ 
 .sch{
     background-color: #ebe4c2;
     padding: 7px 10px;
@@ -167,22 +133,16 @@ $(document).ready(function () {
     box-sizing: border-box; /* padding과 border를 너비에 포함시켜 깨짐 방지 */
 
 }
-.sch>select {
-    font-size: 15px;
-    font-family: 'GangwonEdu_OTFBoldA'; /* 동일한 폰트 적용 */
-    padding: 7px 10px;
-   
-    box-sizing: border-box; /* padding과 border가 포함되도록 */
+.qnaViewZone{
+        margin: 60px 20px;
+        /* border: 1px solid #22222d25; */
+        padding: 42px;
+        background-color: #ffffff4a;
+    }
+.qnaViewZone>h1{
+    font-size:30px;
 }
-.page {
-        cursor: pointer;
-        margin: 0 5px;
-    }
-    .page:hover {
-        font-weight: bold;
-        color: #007bff;
-    }
- 
+
 </style>
 
     
@@ -195,45 +155,28 @@ $(document).ready(function () {
 
     <!-- 컨텐츠 영역 -->
     <div class="contentZone flex-1 p-4 ml-64">
-        <h1 class="text-2xl font-bold">문의 내역</h1>
+        <h1 class="text-2xl font-bold">소개 관리</h1>
         <div class="sch">
-            <select id="schOption" name="schOptionBox">
-                <option value="%">전체</option>
-                <option value="subject">제목</option>
-                <option value="regMan">작성자</option>
-            </select>
-            <input type="text" id="schWord" class="schInput">
-            <button onclick="schQna();" class="adminBtn_2">검색</button>
+          ※ 수정 후 이전 이력 및 내용 확인불가.
         </div>
-     
-        <div id="tabs">
-            <span class="tab activeTab" data-category="전체보기">전체보기</span>
-            <span class="tab" data-category="답변완료">답변완료</span>
-            <span class="tab" data-category="미답변">미답변</span>
+        <div class="qnaViewZone">
+            <button onclick="editInfo();" class="adminBtn_2">수정하기</button>
+            <h1> 최근 수정일자 : <span id="editDate"> 2025-02-12 </span> </h1>
+            <span id="editContent">
+                안녕하십니까 ...더보기
+            </span>
+           
         </div>
-        <table id="listTables">
-            <colgroup>
-                <col style="width: 5%">
-                <col style="width: 30%">
-                <col style="width: 20%">
-                <col style="width: 10%">
-                <col style="width: 20%">
-                <col style="width: 15%">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>NO</th>
-                    <th>제목</th>
-                    <th>등록일자</th>
-                    <th>답변여부</th>
-                    <th>답변일자</th>
-                    <th>작성자</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-        <div id="pagination" style="text-align: center; margin-top: 20px;"></div>
     </div>
-
+    </div>
+    <script>
+        function editInfo(){
+            if(confirm("수정화면으로 이동하시겠습니까?")){
+                location.href="/admin/admInfo/infoEditer.html"
+            }else{
+                return false;
+            }
+        }
+    </script>
 </body>
 </html>

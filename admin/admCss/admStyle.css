@@ -283,6 +283,13 @@ body {
         cursor: pointer;
     }
 
+    /*공통 활성화*/
+    .active{
+        background-color: #80a0df;
+        color:#22222d;
+        font-weight: bold;
+        transition: background-color 0.3s ease-in-out;
+    }
 
     /*글자 색*/
     .green {
