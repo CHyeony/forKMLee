@@ -47,3 +47,6 @@ function admLogout(){
 function goPage(dirPath, fileNm){
     location.href="/admin/"+dirPath+"/"+fileNm+".html";
 }
+function goCommonPage(dirPath, fileNm){
+    location.href= dirPath+"/"+fileNm+".html";
+}
