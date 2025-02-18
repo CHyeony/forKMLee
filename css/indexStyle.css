@@ -13,7 +13,10 @@ body {
             background-color: #181935;
             color: #F2F1EF;
             padding: 15px;
-            text-align: center;
+            /* text-align: center; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .nav-links {
             display: flex;
