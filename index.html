@@ -1,229 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta property="og:title" content="경인 산업">
-  <meta property="og:description" content="여기를 눌러 링크를 확인하세요.">
-  <meta property="og:image" content="https://kiplasticzz.n-e.kr/images\mainBanner.png">
-  <meta property="og:url" content="https://kiplasticzz.n-e.kr">
-  <meta property="og:type" content="website">
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-
-  /* 애니메이션 효과 */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #222;
-}
-
-.banner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: url('/images/darkBanner.png') center/cover no-repeat;
-  border-radius: 15px;
-  overflow: hidden;
-  display: flex;
-}
-
-/* 왼쪽 일반 흰색 글씨 */
-.text-left {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /*align-items: center;
-  text-align: center;*/
-  text-align: right;
-  padding-right: 30px;
-  font-style: italic;
-  
-}
-
-.normal {
-  font-size: 100px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #dfe4eb;
-  animation: fadeIn 1s ease-out forwards; /* 애니메이션 추가 */
-  opacity: 0;
-}
-
-/* 오른쪽 블러 배경 */
-.overlay {
-  width: 50%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.2); /* 반투명 */
-  backdrop-filter: blur(10px); /* 블러 효과 */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
- /* align-items: center;
-  text-align: center;*/
-  text-align: left;
-  padding-left:30px;
-  position: relative;
- 
-}
-.overlayFont{
-  animation: fadeIn 1s ease-out forwards; /* 애니메이션 추가 */
-  opacity: 0;
-  font-style: italic;
-  /*webkit-text-stroke: 1px rgb(158, 158, 158); /* 흰색 테두리 추가 */
-}
-.overlayFont_A{
-  animation: fadeIn 1s ease-out forwards; /* 애니메이션 추가 */
-  opacity: 0;
-  font-style: italic;
-  
-}
-
-/* 클리핑 효과 적용된 글씨 (오른쪽) */
-.clipped {
-  font-size: 100px;
-  font-weight: bold;
-  text-transform: uppercase;
-  position: relative;
-  color: transparent;
-}
-
-.clipped::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('/images/darkBanner.png') no-repeat;
-  background-size: 1600px 400px; /* 배경 크기 전체 맞춤 */
-  background-position: -800px 0; /* 오른쪽 배경 위치 맞춤 */
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-
-</style>
-
-<title>경인산업</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="/js/script.js" defer></script>
-<!-- <link rel="stylesheet" href="css/style.css"> -->
-<script>
-
-
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경인산업</title>
+    <link rel="stylesheet" href="/css/indexStyle.css">
 </head>
 <body>
-  <header>
-    <div class="navbar">
-      <div class="hamburger-menu" onclick="toggleMenu()">
-        ☰
-      </div>
-      <div class="nav-links">
-          <div class="nav-item">
-              <a href="#">회사 소개</a>
-              <ul class="dropdown">
-                  <li><a href="#" onclick="javascript:goCommonPage('info','info');">경인산업 소개</a></li>
-                  <li><a href="#" onclick="javascript:goCommonPage('info','map');">찾아오시는 길</a></li>
-              </ul>
+  <!DOCTYPE html>
+  <html lang="ko">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>경인산업</title>
+  
+  </head>
+  <body>
+    <header>
+      <div class="logo">경인산업</div>
+      <nav>
+          <div class="nav-links">
+              <div class="nav-item">
+                  <a href="#">회사 소개</a>
+                  <ul class="dropdown">
+                      <li><a href="#" onclick="javascript:goCommonPage('info','info');">경인산업 소개</a></li>
+                      <li><a href="#" onclick="javascript:goCommonPage('info','map');">찾아오시는 길</a></li>
+                  </ul>
+              </div>
+              <div class="nav-item"><a href="/info/sb.html">설비 현황</a></div>
+              <div class="nav-item"><a href="/info/service.html">사출서비스 안내</a></div>
+              <div class="nav-item">
+                  <a href="#">제품안내</a>
+                  <ul class="dropdown">
+                      <li><a href="#">생산제품</a></li>
+                      <li><a href="#">심패드</a></li>
+                  </ul>
+              </div>
+              <div class="nav-item"><a href="/info/qna.html">문의사항</a></div>
           </div>
-          <div class="nav-item">
-              <a href="/info/sb.html">설비 현황</a>
-          </div>
-          <div class="nav-item">
-              <a href="/info/service.html">사출서비스 안내</a>
-          </div>
-          <div class="nav-item">
-              <a href="#">제품안내</a>
-              <ul class="dropdown">
-                  <li><a href="#">생산제품</a></li>
-                  <li><a href="#">심패드</a></li>
-              </ul>
-          </div>
-          <div class="nav-item">
-              <a href="/info/qna.html">문의사항</a>
-          </div>
-         
-      </div>
-    </div>
+      </nav>
   </header>
-  <div class="banner">
-   
-    
-    <!-- 왼쪽: 일반 흰색 글씨 -->
-    <div class="text-left">
-      <h2 class="title normal">KYEONG</h2>
-      <p class="subtitle normal">&nbsp;</p>
-    </div>
-  
-    <!-- 오른쪽: 블러 배경 & 클리핑 효과 -->
-    <div class="overlay">
-      <h2 class="title clipped overlayFont_A" data-text="-IN">-IN</h2>
-      <p class="subtitle clipped overlayFont" data-text="INDUSTRY">INDUSTRY</p>
-    
-    
-    </div>
-  </div>
 
-  <!-- <div class="banner">
-   
-    <div class="text-left">
-      <h2 class="title normal">KYEONG</h2>
-      <p class="subtitle normal">INDU</p>
-    </div>
-  
+<section class="banner">
     <div class="overlay">
-      <h2 class="title clipped" data-text="-IN">-IN</h2>
-      <p class="subtitle clipped" data-text="STRY">STRY</p>
+        <h1>PLASTIC INJECTION</h1>
     </div>
-  </div>-->
-  <footer class="footer">
-    <div class="footer-section">
-      <h3>경인산업</h3>
-      <ul>
-        <li>© 1994 경인산업. All rights reserved.</li>
-        <li><a target="_blank" href="/admin/admLogin.html">사업자등록번호 : 107-47-79725</a></li>
-        <li>icons by Icons8.com</li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h3>연락처</h3>
-      <ul>
-          <li>이메일: kiplastic@naver.com</li>
-          <li>소재지: 경기도 시흥시 월곶고잔3길 70-6(월곶동)</li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h3>소셜 미디어</h3>
-      <ul class="social-links">
-          <li><a href="#"><img src="/images/pngwing.png" alt="Footer Image" class="sns-img">kiplasticz</a></li>
-          <li class="onlyM">icon출처 : <a target="_blank" href="https://icons8.com/icon/123514/business-network">비즈니스 네트워크</a> 작가: <a target="_blank" href="https://icons8.com">Icons8</a> </li>
-      </ul>
-    </div>
-    <div class="footer-section onlyPC">
-      <h3>icon 출처</h3>
-      <ul>
-        <li><a target="_blank" href="https://icons8.com/icon/123514/business-network">비즈니스 네트워크</a> 작가: <a target="_blank" href="https://icons8.com">Icons8</a></li>
-      </ul>
-    </div>
+</section>
+
+  <section class="features">
+      <div class="feature"><span>오시는 길</span></div>
+      <div class="feature"><span>문의</span></div>
+      <div class="feature"><span>카탈로그</span></div>
+  </section>
+
+  <section class="products">
+      <h2>생산 제품</h2>
+      <div class="product-grid">
+          <div class="product-box"></div>
+          <div class="product-box"></div>
+      </div>
+  </section>
+
+  <section class="location">
+      <h2>오시는 길</h2>
+      <div class="map"></div>
+      <p>마른 조수골<br>오는 길: 강원 원주시 흥구</p>
+  </section>
+
+  <footer>
+      <p>&copy; 1994 경인산업. All rights reserved.</p>
+      <p>FOOTER: 필요 정보 작성</p>
   </footer>
-
-</body>
+  </body>
 </html>

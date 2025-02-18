@@ -1,0 +1,201 @@
+@font-face {
+    font-family: 'HanaM';
+    /*src: url('/font/Hana2-Medium.ttf') format('truetype');*/
+    src: url('../font/Hana2-Medium.ttf') format('truetype');
+}
+body {
+    background-color: #F2F1EF;
+    color: #181935;
+    font-family: 'HanaM';
+}
+      
+        header {
+            background-color: #181935;
+            color: #F2F1EF;
+            padding: 15px;
+            text-align: center;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .nav-item {
+            position: relative;
+        }
+        .nav-item a {
+            color: #F2F1EF;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+        .nav-item .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #173187;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            top: 100%;
+            left: 0;
+            width: 150px;
+        }
+        .nav-item:hover .dropdown {
+            display: block;
+        }
+        .dropdown li {
+            padding: 10px;
+        }
+        .dropdown li a {
+            color: #F2F1EF;
+        }
+     
+        .banner {
+            position: relative;
+            background: url('banner-image.jpg') center/cover no-repeat;
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px 40px;
+            border-radius: 10px;
+        }
+        
+        .banner h1 {
+            position: relative;
+            z-index: 1;
+            color: #181935;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .banner h1 {
+            position: relative;
+            z-index: 1;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .feature {
+            background-color: #173187;
+            color: #F2F1EF;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 150px;
+        }
+        .product-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .product-box {
+            width: 150px;
+        }
+        .banner {
+            position: relative;
+            background: url('/images/newBack.jpg') center/cover no-repeat;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .banner .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgb(255 255 255 / 42%);
+            padding: 47px 700px;
+            border-radius: 10px;
+        }
+        
+        .banner h1 {
+            color: #181935;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        /* 아이콘 영역 수정 */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 30px 0;
+        }
+        
+        .feature {
+            background-color: #173187;
+            color: #F2F1EF;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 120px;
+        }
+        
+        .feature img {
+            display: block;
+            margin: 0 auto 10px;
+            width: 40px;
+            height: 40px;
+        }
+        
+        /* 네비게이션 dropDown 스타일 조정 */
+        .nav-item .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #173187;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            top: 100%;
+            left: 0;
+            width: 150px;
+            z-index: 10;
+        }
+        
+        .nav-item:hover .dropdown {
+            display: block;
+        }
+        
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+.product-box {
+    width: 150px;
+    height: 150px;
+    background-color: #C3C4BF;
+    border-radius: 10px;
+}
+.location {
+    text-align: center;
+    padding: 20px;
+}
+.map {
+    width: 300px;
+    height: 200px;
+    background-color: #AEADAD;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.footer {
+    background-color: #181935;
+    color: #F2F1EF;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
