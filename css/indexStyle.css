@@ -181,7 +181,7 @@ body {
 .product-box {
     width: 150px;
     height: 150px;
-    background-color: #C3C4BF;
+    background-color: #fff;
     border-radius: 10px;
 }
 .location {
@@ -191,7 +191,7 @@ body {
 .map {
     width: 300px;
     height: 200px;
-    background-color: #AEADAD;
+    background-color: #ffffff;
     margin: 0 auto;
     border-radius: 10px;
 }
