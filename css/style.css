@@ -343,7 +343,7 @@ body {
 }
 
 .nav-links {
-	    padding-right: 44px;
+	padding-right: 44px;
     display: flex;
     justify-content: space-around;
 }
@@ -365,7 +365,12 @@ body {
     display: block;
 }
 
-
+.dropdown li {
+    padding: 10px;
+}
+.dropdown li a {
+    color: #F2F1EF;
+}
 
 /* 모바일 메뉴 */
 /* 기본적으로 햄버거 메뉴 숨기기 */

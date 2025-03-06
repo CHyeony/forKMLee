@@ -32,17 +32,15 @@ body {
             padding: 10px;
             display: block;
         }
-        .nav-item .dropdown {
+        .dropdown {
             display: none;
             position: absolute;
-            background-color: #173187;
-            list-style: none;
-            padding: 0;
-            margin: 0;
             top: 100%;
             left: 0;
-            width: 150px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
         }
+        
         .nav-item:hover .dropdown {
             display: block;
         }
@@ -53,12 +51,7 @@ body {
             color: #F2F1EF;
         }
      
-        .banner {
-            position: relative;
-            background: url('banner-image.jpg') center/cover no-repeat;
-            text-align: center;
-            padding: 50px 0;
-        }
+       
         
         .overlay {
             position: absolute;
@@ -109,7 +102,7 @@ body {
             position: relative;
             background: url('/images/newBack.jpg') center/cover no-repeat;
             text-align: center;
-            padding: 100px 0;
+            padding: 320px 0;
         }
         
         .banner .overlay {
@@ -117,9 +110,10 @@ body {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgb(255 255 255 / 42%);
-            padding: 47px 700px;
+            background: rgb(255 255 255 / 62%);
+            padding: 13% 45%;
             border-radius: 10px;
+            backdrop-filter: blur(3px);
         }
         
         .banner h1 {
@@ -178,7 +172,16 @@ body {
             display: block;
         }
         
-
+        /* 메뉴 항목에 마우스를 올리면 색상 변경 */
+        .nav-item a:hover {
+            background-color: #f2f1ef;
+            color: #132562;
+            font-weight: bold;
+        }
+.products{
+    text-align: center;
+    padding: 20px;
+}
 .product-grid {
     display: flex;
     justify-content: center;
@@ -202,10 +205,60 @@ body {
     margin: 0 auto;
     border-radius: 10px;
 }
+
+/* FOOTER STYLE */
 footer {
     background-color: #181935;
-    color: #F2F1EF;
-    text-align: center;
+    padding: 10px 6.5%;
+    color:rgb(187, 187, 187);
+    text-align: left;
     padding: 15px;
     margin-top: 20px;
+    text-decoration: none;
+   
 }
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+  }
+  
+  .footer-section {
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: space-between;
+    justify-content: flex-end;
+    float: left;
+  }
+
+  .footer-section ul li{
+    list-style: none;
+    padding: 0;
+  }
+  footer a{
+    text-decoration: none;
+    color:rgb(187, 187, 187);
+  }
+  .footer-section h3 {
+    margin-bottom: 0px;
+  }
+  
+  
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .sns-img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }  
