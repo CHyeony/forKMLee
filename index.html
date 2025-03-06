@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>경인산업</title>
     <link rel="stylesheet" href="/css/indexStyle.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/script.js" defer></script>
 </head>
 <body>
   <!DOCTYPE html>
@@ -17,7 +19,9 @@
   </head>
   <body>
     <header>
-      <div class="logo">경인산업</div>
+      <div class="logo"><a href="/index.html" style=" text-decoration: none;
+        color: #c5c5c5;
+        font-size:16pt;">경인산업</a></div>
       <nav>
           <div class="nav-links">
               <div class="nav-item">
@@ -53,6 +57,7 @@
       <div class="feature"><span>문의</span></div>
       <div class="feature"><span>카탈로그</span></div>
   </section>
+ 
 
   <section class="products">
       <h2>생산 제품</h2>
@@ -65,9 +70,9 @@
   <section class="location">
       <h2>오시는 길</h2>
       <div class="map"></div>
-      <p>마른 조수골<br>오는 길: 강원 원주시 흥구</p>
+      <p>경기도 시흥시 월곶고잔3길 70-6(월곶동)</p>
   </section>
-
+  <button id="scrollTopBtn">↑</button>
     <footer class="footer">
         <div class="footer-section">
         <h3>경인산업</h3>
@@ -98,5 +103,6 @@
         </ul>
         </div>
     </footer>
+    
   </body>
 </html>
