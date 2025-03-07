@@ -26,66 +26,7 @@
 
 </script>
 <style>
-       .tab {
-            padding: 10px 75px;
-            cursor: pointer;
-            display: inline-block;
-            border: 1px solid #ddd;
-            background-color: #f8f8f8;
-            margin-right: 11px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-        #tabs{
-            border-bottom: 2px solid #22222d;
-            width: 100%;
-            text-align: center;
-            
-        }
-        .tab.activeTab {
-            background-color: #22222d;
-            font-weight: bold;
-            color: #fff;
-        }
-#listTables{
-    width: 100%;
-    text-align: center;
-}
-#listTables>thead>tr{
-    background: #22222d;
-    color: #fff;
-    font-family: 'GangwonEdu_OTFBoldA';
-}
-#listTables>tbody>tr:nth-child(even){
-    background: #e7e5e5;
     
-}
-       
-.sch{
-    background-color: #a498be8a;
-    padding: 7px 10px;
-    font-size: 15px;
-    font-family: 'GangwonEdu_OTFBoldA';
-    margin: 10px 0px;
-    width: 100%; /* select 박스가 부모 요소의 크기에 맞게 확장 */
-    box-sizing: border-box; /* padding과 border를 너비에 포함시켜 깨짐 방지 */
-
-}
-.sch>select {
-    font-size: 15px;
-    font-family: 'GangwonEdu_OTFBoldA'; /* 동일한 폰트 적용 */
-    padding: 7px 10px;
-   
-    box-sizing: border-box; /* padding과 border가 포함되도록 */
-}
-.page {
-        cursor: pointer;
-        margin: 0 5px;
-    }
-    .page:hover {
-        font-weight: bold;
-        color: #007bff;
-    }
  
 </style>
 
@@ -102,8 +43,38 @@
         <h1 class="text-2xl font-bold">마이 페이지</h1>
        
      
-        <div style="background-color:#fff;">
-            asdaf
+        <div id="infoArea1">
+            <div>
+                <button id="editInfo" class="adminBtn_2">
+                    <span class="clickView"></span>기본정보 수정하기</button>
+            </div>
+            <table id="idInfo">
+                <caption> 기본 정보 </caption>
+                <tr>
+                    <th>계정</th>
+                    <th>
+                        <span id="userId" name="userId" class="infoSpan">admin</span>
+                    </th>
+                </tr>
+                <tr>
+                    <th>사용자 명</th>
+                    <th>
+                        <input type="text" id="username" name="username" class="infoInput">
+                    </th>
+                </tr>
+                <tr>
+                    <th> 패스워드 </th>
+                    <td>
+                        <input type="password" id="passwd" name="passwd" class="infoInput">
+                    </td>
+                </tr>
+                <tr>
+                    <th> 패스워드 확인</th>
+                    <td>
+                        <input type="password" id="passwdChk" name="passwdChk" class="infoInput">
+                    </td>   
+                </tr>
+            </table>
         </div>
        
     </div>
