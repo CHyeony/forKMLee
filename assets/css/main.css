@@ -1,9 +1,43 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
+
+/*Font */
 @font-face {
     font-family: 'HanaM';
     /*src: url('/font/Hana2-Medium.ttf') format('truetype');*/
     src: url('/font/Hana2-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: '60sSTRIPE';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/60sSTRIPE.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BOKEH';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/BOKEH.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HanaLig';
+    src: url('/font/Hana2-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'HanaBold';
+    src: url('/font/Hana2-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /*
@@ -116,7 +150,8 @@
 
 	body, input, select, textarea {
 		color: #777;
-		font-family: "Source Sans Pro", sans-serif;
+		/* font-family: "Source Sans Pro", sans-serif; */
+		font-family: 'HanaLig';
 		font-size: 16pt;
 		font-weight: 300;
 		line-height: 1.65em;
@@ -264,7 +299,7 @@
 		box-sizing: border-box;
 		align-items: stretch;
 	}
-
+		
 		.row > * {
 			box-sizing: border-box;
 		}
@@ -3194,6 +3229,7 @@
 			line-height: 1em;
 			margin: 0 0 0.5em 0;
 			padding: 0;
+			font-family: '60sSTRIPE'
 		}
 
 		#banner p {
@@ -3242,11 +3278,13 @@
 		#main > header {
 			text-align: center;
 			margin: 0 0 3em 0;
+			
 		}
 
 			#main > header h2 {
 				font-size: 2.75em;
 				margin: 0;
+				
 			}
 
 			#main > header p {
@@ -3469,6 +3507,7 @@
 
 			.box {
 				padding: 3em 2em;
+				
 			}
 
 				.box.features > section {
@@ -3489,7 +3528,7 @@
 						margin-bottom: -3em;
 						margin-top: 3em;
 					}
-
+		
 		/* Header */
 
 			#page-wrapper {
@@ -3905,3 +3944,54 @@
 			}
 
 	}
+	/*REMOTE*/
+	#scrollTopBtn {
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		width: 50px;
+		height: 50px;
+		background-color: #181935;
+		color: #F2F1EF;
+		border: none;
+		border-radius: 50%;
+		font-size: 24px;
+		cursor: pointer;
+		display: none; /* 처음엔 숨김 */
+		justify-content: center;
+		align-items: center;
+		transition: opacity 0.3s, transform 0.3s;
+		box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+		z-index: 1000;
+	}
+	
+	#scrollTopBtn:hover {
+		background-color: #3a3b5a;
+		transform: scale(1.1); /* 살짝 커지는 효과 */
+	}
+	
+	/*TEST*/
+	.content {
+		word-spacing: 2px;
+		overflow: hidden;
+	  }
+	  
+	  .title {
+		margin: 0;
+		font-size: 4rem;
+	  }
+	  
+	  
+	  .letter {
+		display: inline-block;
+		animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+	  }
+	  
+	  @keyframes reveal {
+		0% {
+		  transform: translateY(100%);
+		}
+		100% {
+		  transform: translateY(0);
+		}
+	  }
