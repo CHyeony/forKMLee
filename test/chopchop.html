@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <style>
+            @font-face {
+    font-family: 'BMkkubulimTTF-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/BMkkubulimTTF-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'BMkkubulimTTF-Regular';
+  background: #000;
+}
+
+h1 {
+
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-size: 10vw;
+  font-weight: 900;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  background-size: 120% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -ms-background-clip: text;
+  -ms-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  background-image: linear-gradient(45deg, 
+                    #ffffff, 
+                    #5e5e5e
+                   );
+  animation: .8s shake infinite alternate;
+}
+
+@keyframes shake {
+  0% { transform: skewX(-15deg); }
+  5% { transform: skewX(15deg); }
+  10% { transform: skewX(-15deg); }
+  15% { transform: skewX(15deg); }
+  20% { transform: skewX(0deg); }
+  100% { transform: skewX(0deg); }  
+}
+        </style>
+    </head>
+    <body>
+        <h1>흔들흔들</h1>
+    </body>
+</html>
