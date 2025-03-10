@@ -10,7 +10,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/assets/css/main.css" />
-        <script src="/js/script.js" defer></script>
+    <script src="/js/script.js" defer></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d9b110c9d35434b1c267523dbb19c387&libraries=services"></script>
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
@@ -56,25 +57,48 @@
 						<!-- <p>A generic page for every non-generic situation.</p> -->
 					</header>
 					<div class="box ContentText">
-						<span class="image featured"><img src="/images/pic01.jpg" alt="" /></span>
+						<span class="image featured"><div id="map"></div></span>
+            <script>
+              // 지도 표시 영역
+              const mapContainer = document.getElementById('map'); 
+              const mapOption = {
+                center: new kakao.maps.LatLng(37.3947, 126.7352), // 기본 좌표
+                level: 3 // 확대 수준
+              };
+          
+              const map = new kakao.maps.Map(mapContainer, mapOption); // 지도 생성
+          
+              // 주소-좌표 변환 객체 생성
+              const geocoder = new kakao.maps.services.Geocoder();
+          
+              // 주소 검색 및 결과 처리
+              geocoder.addressSearch('경기도 시흥시 월곶고잔 3길 70-6', function(result, status) {
+                if (status === kakao.maps.services.Status.OK) {
+                  const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+          
+               
+                  map.setCenter(coords);
+          
+              
+                  const marker = new kakao.maps.Marker({
+                    map: map,
+                    position: coords
+                  });
+          
+                  // 인포윈도우 추가
+                  const infowindow = new kakao.maps.InfoWindow({
+                    content: '<div style="padding:5px;">경기도 시흥시 월곶고잔 3길 70-6 </div>'
+                  });
+                  infowindow.open(map, marker);
+                } else {
+                  alert('주소를 찾을 수 없습니다.');
+                }
+              });
+            </script>
 						
-						<p>&#50504;&#45397;&#54616;&#49901;&#45768;&#44620;. &#54540;&#46972;&#49828;&#54001; &#49324;&#52636; &#49373;&#49328; &#48143; &#51228;&#51312; &#51204;&#47928; &#44592;&#50629; &#44221;&#51064;&#49328;&#50629;&#51077;&#45768;&#45796;.<br />
-                            &#51200;&#55148; &#44221;&#51064;&#49328;&#50629; &#54856;&#54168;&#51060;&#51648;&#51060;&#50640; &#48169;&#47928;&#54644;&#51452;&#49492;&#49436; &#44048;&#49324;&#54633;&#45768;&#45796;.<br />
-                            &#44221;&#51064;&#49328;&#50629;&#51008; &#51452;&#47560;&#44032;&#54200;&#51032; &#47560;&#51020;&#51004;&#47196; &#51228;&#54408;&#51012; &#49373;&#49328;&#54633;&#45768;&#45796;.<br />
-                           </p>
-						<div class="row">
-							<div class="row-6 row-12-mobilep">
-								<h3>&#44221;&#54744;</h3>
-								<p>
-                                    &#44221;&#51064;&#49328;&#50629;&#51008; OEM&#48169;&#49885;&#51032; &#44277;&#51109;&#51004;&#47196; 1994&#45380; &#49444;&#47549; &#51060;&#54980; &#50557; 15,000&#50668;&#44060;&#51032; &#45796;&#50577;&#54620; &#51228;&#54408;&#46308;&#51012; &#49324;&#52636; &#48143; &#51228;&#51312;&#54644;&#50772;&#49845;&#45768;&#45796;.<br />
-                                    &#44536; &#44221;&#54744;&#51012; &#48148;&#53461;&#51004;&#47196; &#50612;&#46496;&#54620; &#51228;&#54408;&#51060;&#46304; &#47564;&#51313;&#49828;&#47084;&#50868; &#44208;&#44284;&#47932;&#51012; &#47564;&#46308;&#50612;&#45236;&#44192;&#49845;&#45768;&#45796;.</p>
-							</div>
-							<div>
-								<h3>&#51452;&#47560;&#44032;&#54200;</h3>
-								<p>
-                                    &#45804;&#47532;&#45716; &#47568;&#50640; &#52292;&#52237;&#51012; &#44032;&#54620;&#45796; &#46972;&#45716; &#49324;&#51088;&#49457;&#50612;&#51077;&#45768;&#45796;.<br />
-                                    &#54788;&#51116;&#50640; &#47564;&#51313;&#54616;&#51648; &#50506;&#44256; &#45908; &#52572;&#49440;&#51012; &#45796;&#54616;&#44192;&#49845;&#45768;&#45796;.</p>
-							</div>
+						<p>사업장 주소 : 경기도 시흥시 월곶고잔3길 70-6 경인산업<br>
+              네이버지도, 티맵, 카카오네비 등 네비게이션어플 검색 -> 경인산업(시흥시 월곶동)</p>
+              </div>
 						</div>
 					</div>
 				</section>
