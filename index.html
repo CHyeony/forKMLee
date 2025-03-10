@@ -14,6 +14,25 @@
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d9b110c9d35434b1c267523dbb19c387&libraries=services"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    // 스크롤 이벤트 감지
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            scrollTopBtn.style.display = "flex";
+        } else {
+            scrollTopBtn.style.display = "none";
+        }
+    });
+
+    // 버튼 클릭 시 최상단으로 스크롤
+    scrollTopBtn.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+});
+		</script>
 	</head>
 	<body class="landing is-preload">
 		<div id="page-wrapper">
@@ -34,14 +53,14 @@
 											<li><a href="#" onclick="javascript:goCommonPage('info','map');">찾아오시는 길</a></li>
 										</ul>
 									</li>
-									<li><a href="generic.html">설비 현황</a></li>
-									<li><a href="contact.html">사출서비스 안내</a></li>
+									<li><a href="#" onclick="javascript:goCommonPage('info','sb');">설비 현황</a></li>
+									<li><a href="#" onclick="javascript:goCommonPage('info','service');">사출서비스 안내</a></li>
 									<!-- <li><a href="elements.html">Elements</a></li> -->
 									<li>
 										<a href="#">제품안내</a>
 										<ul>
-											<li><a href="#">생산제품</a></li>
-											<li><a href="#">심패드</a></li>
+											<li><a href="generic.html">생산제품</a></li>
+											<li><a href="contact.html">심패드</a></li>
 											
 										</ul>
 									</li>
@@ -58,7 +77,7 @@
 					<!-- <p >플라스틱 사출 생산 및 제조 전문 기업 경인산업입니다.</p> -->
 					<ul class="actions special">
 						<li><a href="#" onclick="goCommonPage('info','qna');" class="button primary">문의하기</a></li>
-						<li><a href="#" class="button">생산 제품</a></li>
+						<li><a href="/info/infoHeader.html" class="button">생산 제품</a></li>
 					</ul>
 				</section>
 
@@ -88,7 +107,7 @@
 							const geocoder = new kakao.maps.services.Geocoder();
 						
 							// 주소 검색 및 결과 처리
-							geocoder.addressSearch('경기도 시흥시 월곶고잔 3길 70-6', function(result, status) {
+							geocoder.addressSearch('시흥시 월곶고잔 3길 70-6', function(result, status) {
 							  if (status === kakao.maps.services.Status.OK) {
 								const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 						

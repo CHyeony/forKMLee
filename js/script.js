@@ -53,22 +53,6 @@ function goCommonPage(dirPath, fileNm){
 
 /* 리모컨 */
 
-document.addEventListener("DOMContentLoaded", function () {
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-    // 스크롤 이벤트 감지
-    window.addEventListener("scroll", function () {
-        if (window.scrollY > 200) {
-            scrollTopBtn.style.display = "flex";
-        } else {
-            scrollTopBtn.style.display = "none";
-        }
-    });
-
-    // 버튼 클릭 시 최상단으로 스크롤
-    scrollTopBtn.addEventListener("click", function () {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-});
 
 

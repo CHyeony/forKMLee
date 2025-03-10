@@ -1,39 +1,289 @@
-<head>
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <script src="/js/script.js" defer></script>
-</head>
-<body>
-    <header id="header" class="alt">
-        <h1><a href="/index.html">경인산업</a></h1>
-        <button id="scrollTopBtn">↑</button>   
-        <nav id="nav">
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li>
-                    <a href="#" class="icon solid fa-angle-down">MENU</a>
-                    <ul>
-                        <li>
-                            <a href="#">회사 소개</a>
-                            <ul>
-                                <li><a href="#" onclick="javascript:goCommonPage('info','info');">경인산업 소개</a></li>
-                                <li><a href="#" onclick="javascript:goCommonPage('info','map');">찾아오시는 길</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="generic.html">설비 현황</a></li>
-                        <li><a href="contact.html">사출서비스 안내</a></li>
-                        <!-- <li><a href="elements.html">Elements</a></li> -->
-                        <li>
-                            <a href="#">제품안내</a>
-                            <ul>
-                                <li><a href="#">생산제품</a></li>
-                                <li><a href="#">심패드</a></li>
-                                
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="#" onclick="goCommonPage('info','qna');" class="button">contact</a></li>
-            </ul>
-        </nav>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<style>
+    @font-face {
+    font-family: 'BMkkubulimTTF-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/BMkkubulimTTF-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#animationBack { 
+    height: 50%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  background: #000; 
+  overflow: hidden;
+}
+main {
+  display: flex;
+}
+p {
+  line-height: 1;
+}
+span {
+  display: block;
+  width: 2vmax; 
+  height: 2vmax; 
+  font-size: 2vmax; 
+  color: #9bff9b11;
+  text-align: center;
+  font-family: "BMkkubulimTTF-Regular";
+}
+
+
+/* 반갈 */
+#textCut{
+    font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#cutText {
+  font-size: calc(10vw + 0.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: black;
+  position: relative;
+  background: linear-gradient(transparent 50%, #000 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &::after {
+    content: attr(data-heading);
+    position: absolute;
+    left: 0;
+    background: linear-gradient(#000 50%, transparent 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: translate(0px, -2px);
+    animation: fracture 5s infinite ease;
+  }
+}
+
+@keyframes fracture {
+  0% {
+    transform: translate(0, -2px);
+  }
+  50% {
+    transform: translate(-20px, -2px);
+  }
+}
+</style>
+<section id="animationBack">
+    <main></main>
+</section>
+<script>
+ function r(from, to) {
+  return ~~(Math.random() * (to - from + 1) + from);
+}
+function pick() {
+  return arguments[r(0, arguments.length - 1)];
+}
+function getChar() {
+  return String.fromCharCode(pick(
+    r(0x3041, 0x30ff),
+    r(0x2000, 0x206f),
+    r(0x0020, 0x003f)
+  ));
+}
+function loop(fn, delay) {
+  let stamp = Date.now();
+  function _loop() {
+    if (Date.now() - stamp >= delay) {
+      fn(); stamp = Date.now();
+    }
+    requestAnimationFrame(_loop);
+  }
+  requestAnimationFrame(_loop);
+}
+class Char {
+  constructor() {
+    this.element = document.createElement('span');
+    this.mutate();
+  }
+  mutate() {
+    this.element.textContent = getChar();
+  }
+}
+class Trail {
+  constructor(list = [], options) {
+    this.list = list;
+    this.options = Object.assign(
+      { size: 10, offset: 0 }, options
+    );
+    this.body = [];
+    this.move();
+  }
+  traverse(fn) {
+    this.body.forEach((n, i) => {
+      let last = (i == this.body.length - 1);
+      if (n) fn(n, i, last);
+    });
+  }
+  move() {
+    this.body = [];
+    let { offset, size } = this.options;
+    for (let i = 0; i < size; ++i) {
+      let item = this.list[offset + i - size + 1];
+      this.body.push(item);
+    }
+    this.options.offset = 
+      (offset + 1) % (this.list.length + size - 1);
+  }
+}
+class Rain {
+  constructor({ target, row }) {
+    this.element = document.createElement('p');
+    this.build(row);
+    if (target) {
+      target.appendChild(this.element);
+    }
+    this.drop();
+  }
+  build(row = 20) {
+    let root = document.createDocumentFragment();
+    let chars = [];
+    for (let i = 0; i < row; ++i) {
+      let c = new Char();
+      root.appendChild(c.element);
+      chars.push(c);
+      if (Math.random() < .5) {
+        loop(() => c.mutate(), r(1e3, 5e3));
+      }
+    }
+    this.trail = new Trail(chars, { 
+      size: r(10, 30), offset: r(0, 100) 
+    });
+    this.element.appendChild(root); 
+  }
+  drop() {
+    let trail = this.trail;
+    let len = trail.body.length;
+    let delay = r(10, 100);
+    loop(() => {
+      trail.move();
+      trail.traverse((c, i, last) => {
+        c.element.style = `
+          color: hsl(136, 100%, ${85 / len * (i + 1)}%)
+        `;
+        if (last) {
+          c.mutate();
+          c.element.style = `
+            color: hsl(136, 100%, 85%);
+            text-shadow:
+              0 0 .5em #fff,
+              0 0 .5em currentColor;
+          `;
+        }
+      });
+    }, delay);
+  }
+}
+
+const main = document.querySelector('main');
+for (let i = 0; i < 50; ++i) {
+  new Rain({ target: main, row: 50 });
+}
+</script>
+<section id="textCut">
+    <h1 contenteditable data-heading="Fracture" id="cutText">Fracture</h1>
+</section>
+<script>
+        // Makes text editable
+    var h1 = document.querySelector("h1");
+
+    h1.addEventListener("input", function(e) {
+    
+    console.log(this.innerHTML)
+        this.setAttribute("data-heading", this.innerText);
+    });
+</script>
+
+
+<!-- 헤더 실험 -->
+<section id="main" class="container">
+    <header>
+        <h2>인사말</h2>
+        <h3>INTRODUCE</h3>
+        <!-- <p>A generic page for every non-generic situation.</p> -->
     </header>
-</body>
+</section>
+<style>
+    #main header{
+        position: absolute;
+        left:50%;
+        top:70%;
+        transform:translate(-50%,-50%);
+    }
+    #main > header > h2{
+        font-size:60px;
+        font-weight:bold;
+        font-family: 'Montserrat', sans-serif;
+        text-align:center;
+        color:#756713;
+        letter-spacing:0px;
+        transition:1s;
+        -webkit-transition:1s;
+        -ms-transition:1s;
+        position: relative;
+        padding:10px;
+        
+    }
+
+    #main > header > h2:before,
+    #main > header > h2:after{
+  content:"";
+  position: absolute;
+  height: 7px;
+  width: 0px;
+  background:#ffd800;
+  transition:300ms;
+  -webkit-transition:1s;
+  -ms-transition:1s;
+  opacity:0.3;
+  left:50%;
+}
+
+#main > header > h2:before{
+  bottom:0;
+ 
+}
+
+#main > header > h2:after{
+  top:0;
+  
+}
+
+#main > header > h2:hover{
+  letter-spacing:30px;
+}
+
+#main > header > h2:hover:before,
+#main > header > h2:hover:after{
+   width: 95%;
+    opacity:1;
+  left:0;
+
+}
+#main > header > h2:hover ~ h3{
+  opacity:0;
+}
+h3{
+  color:#b93d3d;
+  font-family: 'Pinyon Script', cursive;
+  text-align:center;
+  font-size:100px;
+  font-weight:100;
+  bottom:40px;
+  position: absolute;
+  transition:1s;
+  -webkit-transition:1s;
+  -ms-transition:1s;
+  opacity:0.1;
+  width: 100%;
+}
+
+</style>
