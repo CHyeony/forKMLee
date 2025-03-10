@@ -10,41 +10,48 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="/js/script.js" defer></script>
 	</head>
 	<body class="landing is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1><a href="index.html">Alpha</a> by HTML5 UP</h1>
+					<h1><a href="index.html">경인산업</a></h1>
 					<nav id="nav">
 						<ul>
 							<li><a href="index.html">Home</a></li>
 							<li>
-								<a href="#" class="icon solid fa-angle-down">Layouts</a>
+								<a href="#" class="icon solid fa-angle-down">MENU</a>
 								<ul>
-									<li><a href="generic.html">Generic</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									<li>
+										<a href="#">회사 소개</a>
+										<ul>
+											<li><a href="#" onclick="javascript:goCommonPage('info','info');">경인산업 소개</a></li>
+											<li><a href="#" onclick="javascript:goCommonPage('info','map');">찾아오시는 길</a></li>
+										</ul>
+									</li>
+									<li><a href="generic.html">설비 현황</a></li>
+									<li><a href="contact.html">사출서비스 안내</a></li>
 									<li><a href="elements.html">Elements</a></li>
 									<li>
-										<a href="#">Submenu</a>
+										<a href="#">제품안내</a>
 										<ul>
-											<li><a href="#">Option One</a></li>
-											<li><a href="#">Option Two</a></li>
-											<li><a href="#">Option Three</a></li>
-											<li><a href="#">Option Four</a></li>
+											<li><a href="#">생산제품</a></li>
+											<li><a href="#">심패드</a></li>
+											
 										</ul>
 									</li>
 								</ul>
 							</li>
-							<li><a href="#" class="button">Sign Up</a></li>
+							<li><a href="#" onclick="goCommonPage('info','qna');" class="button">contact</a></li>
 						</ul>
 					</nav>
 				</header>
 
 			<!-- Banner -->
 				<section id="banner">
-					<h2>Alpha</h2>
+					<h2>KYEONG - IN</h2>
 					<p>Another fine responsive site template freebie by HTML5 UP.</p>
 					<ul class="actions special">
 						<li><a href="#" class="button primary">Sign Up</a></li>
