@@ -1,157 +1,171 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta property="og:title" content="경인 산업">
-    <meta property="og:description" content="여기를 눌러 링크를 확인하세요.">
-    <meta property="og:image" content="https://kiplasticzz.n-e.kr/images\mainBanner.png">
-    <meta property="og:url" content="https://kiplasticzz.n-e.kr">
-    <meta property="og:type" content="website">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>경인산업</title>
-    <link rel="stylesheet" href="/css/indexStyle.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/js/script.js" defer></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d9b110c9d35434b1c267523dbb19c387&libraries=services"></script>
- 
-</head>
-<body>
-  <!DOCTYPE html>
-  <html lang="ko">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>경인산업</title>
-      <style>
-        #map {
-          width: 150%;
-          height: 200px;
-        }
-      </style>
-  </head>
-  <body>
-    <header>
-      <div class="logo"><a href="/index.html" style=" text-decoration: none;
-        color: #c5c5c5;
-        font-size:16pt;">경인산업</a></div>
-      <nav>
-          <div class="nav-links">
-              <div class="nav-item">
-                  <a href="#">회사 소개</a>
-                  <ul class="dropdown">
-                      <li><a href="#" onclick="javascript:goCommonPage('info','info');">경인산업 소개</a></li>
-                      <li><a href="#" onclick="javascript:goCommonPage('info','map');">찾아오시는 길</a></li>
-                  </ul>
-              </div>
-              <div class="nav-item"><a href="/info/sb.html">설비 현황</a></div>
-              <div class="nav-item"><a href="/info/service.html">사출서비스 안내</a></div>
-              <div class="nav-item">
-                  <a href="#">제품안내</a>
-                  <ul class="dropdown">
-                      <li><a href="#">생산제품</a></li>
-                      <li><a href="#">심패드</a></li>
-                  </ul>
-              </div>
-              <div class="nav-item"><a href="/info/qna.html">문의사항</a></div>
-          </div>
-      </nav>
-  </header>
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Alpha by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
 
-<section class="banner">
-    <div class="overlay">
-        <h1 class="title clipped overlayFont_A" data-text="PLASTIC INJECTION">PLASTIC INJECTION</h1>
-     
-    </div>
-</section>
+			<!-- Header -->
+				<header id="header" class="alt">
+					<h1><a href="index.html">Alpha</a> by HTML5 UP</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li>
+								<a href="#" class="icon solid fa-angle-down">Layouts</a>
+								<ul>
+									<li><a href="generic.html">Generic</a></li>
+									<li><a href="contact.html">Contact</a></li>
+									<li><a href="elements.html">Elements</a></li>
+									<li>
+										<a href="#">Submenu</a>
+										<ul>
+											<li><a href="#">Option One</a></li>
+											<li><a href="#">Option Two</a></li>
+											<li><a href="#">Option Three</a></li>
+											<li><a href="#">Option Four</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="#" class="button">Sign Up</a></li>
+						</ul>
+					</nav>
+				</header>
 
-  <section class="features">
-      <div class="feature"><span><a href="#" onclick="javascript:goCommonPage('info','map');">오시는 길</a></span></div>
-      <div class="feature"><span><a href="#" onclick="javascript:goCommonPage('info','qna');">문의</a></span></div>
-      <div class="feature"><span><a href="#" onclick="">카탈로그</a></span></div>
-  </section>
- 
+			<!-- Banner -->
+				<section id="banner">
+					<h2>Alpha</h2>
+					<p>Another fine responsive site template freebie by HTML5 UP.</p>
+					<ul class="actions special">
+						<li><a href="#" class="button primary">Sign Up</a></li>
+						<li><a href="#" class="button">Learn More</a></li>
+					</ul>
+				</section>
 
-  <section class="products">
-      <h2>생산 제품</h2>
-      <div class="product-grid">
-          <div class="product-box"></div>
-          <div class="product-box"></div>
-      </div>
-  </section>
+			<!-- Main -->
+				<section id="main" class="container">
 
-  <section class="location">
-      <h2>오시는 길</h2>
-      <div id="map"></div>
-      <p>경기도 시흥시 월곶고잔3길 70-6(월곶동)</p>
-      <script>
-        // 지도 표시 영역
-        const mapContainer = document.getElementById('map'); 
-        const mapOption = {
-          center: new kakao.maps.LatLng(37.3947, 126.7352), // 기본 좌표
-          level: 3 // 확대 수준
-        };
-    
-        const map = new kakao.maps.Map(mapContainer, mapOption); // 지도 생성
-    
-        // 주소-좌표 변환 객체 생성
-        const geocoder = new kakao.maps.services.Geocoder();
-    
-        // 주소 검색 및 결과 처리
-        geocoder.addressSearch('경기도 시흥시 월곶고잔 3길 70-6', function(result, status) {
-          if (status === kakao.maps.services.Status.OK) {
-            const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-    
-         
-            map.setCenter(coords);
-    
-        
-            const marker = new kakao.maps.Marker({
-              map: map,
-              position: coords
-            });
-    
-            // 인포윈도우 추가
-            const infowindow = new kakao.maps.InfoWindow({
-              content: '<div style="padding:5px;">경기도 시흥시 월곶고잔 3길 70-6 </div>'
-            });
-            infowindow.open(map, marker);
-          } else {
-            alert('주소를 찾을 수 없습니다.');
-          }
-        });
-      </script>
-  </section>
-  <button id="scrollTopBtn">↑</button>
-    <footer class="footer">
-        <div class="footer-section">
-        <h3>경인산업</h3>
-        <ul>
-            <li>© 1994 경인산업. All rights reserved.</li>
-            <li><a target="_blank" href="/admin/admLogin.html">사업자등록번호 : 107-47-79725</a></li>
-            <li>icons by Icons8.com</li>
-        </ul>
-        </div>
-        <div class="footer-section">
-        <h3>연락처</h3>
-        <ul>
-            <li>이메일: kiplastic@naver.com</li>
-            <li>소재지: 경기도 시흥시 월곶고잔3길 70-6(월곶동)</li>
-        </ul>
-        </div>
-        <div class="footer-section">
-        <h3>소셜 미디어</h3>
-        <ul class="social-links">
-            <li><a href="#"><img src="/images/pngwing.png" alt="Footer Image" class="sns-img">kiplasticz</a></li>
-            <li class="onlyM">icon출처 : <a target="_blank" href="https://icons8.com/icon/123514/business-network">비즈니스 네트워크</a> 작가: <a target="_blank" href="https://icons8.com">Icons8</a> </li>
-        </ul>
-        </div>
-        <div class="footer-section onlyPC">
-        <h3>icon 출처</h3>
-        <ul>
-            <li><a target="_blank" href="https://icons8.com/icon/123514/business-network">비즈니스 네트워크</a> 작가: <a target="_blank" href="https://icons8.com">Icons8</a></li>
-        </ul>
-        </div>
-    </footer>
-    
-  </body>
+					<section class="box special">
+						<header class="major">
+							<h2>Introducing the ultimate mobile app
+							<br />
+							for doing stuff with your phone</h2>
+							<p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc ornare<br />
+							adipiscing nunc adipiscing. Condimentum turpis massa.</p>
+						</header>
+						<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
+					</section>
+
+					<section class="box special features">
+						<div class="features-row">
+							<section>
+								<span class="icon solid major fa-bolt accent2"></span>
+								<h3>Magna etiam</h3>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							</section>
+							<section>
+								<span class="icon solid major fa-chart-area accent3"></span>
+								<h3>Ipsum dolor</h3>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							</section>
+						</div>
+						<div class="features-row">
+							<section>
+								<span class="icon solid major fa-cloud accent4"></span>
+								<h3>Sed feugiat</h3>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							</section>
+							<section>
+								<span class="icon solid major fa-lock accent5"></span>
+								<h3>Enim phasellus</h3>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							</section>
+						</div>
+					</section>
+
+					<div class="row">
+						<div class="col-6 col-12-narrower">
+
+							<section class="box special">
+								<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
+								<h3>Sed lorem adipiscing</h3>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+								<ul class="actions special">
+									<li><a href="#" class="button alt">Learn More</a></li>
+								</ul>
+							</section>
+
+						</div>
+						<div class="col-6 col-12-narrower">
+
+							<section class="box special">
+								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
+								<h3>Accumsan integer</h3>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+								<ul class="actions special">
+									<li><a href="#" class="button alt">Learn More</a></li>
+								</ul>
+							</section>
+
+						</div>
+					</div>
+
+				</section>
+
+			<!-- CTA -->
+				<section id="cta">
+
+					<h2>Sign up for beta access</h2>
+					<p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc.</p>
+
+					<form>
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-8 col-12-mobilep">
+								<input type="email" name="email" id="email" placeholder="Email Address" />
+							</div>
+							<div class="col-4 col-12-mobilep">
+								<input type="submit" value="Sign Up" class="fit" />
+							</div>
+						</div>
+					</form>
+
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
