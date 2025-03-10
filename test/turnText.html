@@ -1,55 +1,89 @@
-<ul>
-    <li>이</li>
-    <li>거</li>
-    <li>귀</li>
-    <li>엽</li>
-    <li>다</li>
-    <li>그</li>
-    <li>치</li>
-    <li>집</li>
-    <li>가</li>
-    <li>고</li>
-    <li>싶</li>
-    <li>어</li>
-  </ul>
+<head>
+    <title>TEST</title>
+</head>
+<body>
+    <div class="container">
+        <div class="neon">Neon </div>
+        <div class="flux">Flux </div>
+      </div>
   <style>
-        @font-face {
+ html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: table;
+  background-color: black;
+}
+@font-face {
     font-family: 'BMkkubulimTTF-Regular';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/BMkkubulimTTF-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
-    body {
-        font-family: 'BMkkubulimTTF-Regular';
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
+@font-face {
+  font-family: neon;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
 }
-ul {
-  margin: 0;
-  list-style: none;
-  font-size: 4vw;
-  transform-style: preserve-3d;
-  animation: three-dimensions-circle 30s linear infinite;
+
+.container {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
 }
-li {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+
+.neon {
+  font-family: 'BMkkubulimTTF-Regular';
+  color: #FB4264;
+  font-size: 9vw;
+  line-height: 9vw;
+  text-shadow: 0 0 3vw #F40A35;
 }
-@for $i from 1 through 12 {
-  li:nth-child(#{$i}) {
-    transform: translate(-50%, -50%) rotate(#{$i * 30 - 30}deg) translateY(-260px) rotateX(90deg);
-  }
+
+.flux {
+  font-family: neon;
+  color: #426DFB;
+  font-size: 9vw;
+  line-height: 9vw;
+  text-shadow: 0 0 3vw #2356FF;
 }
-@keyframes three-dimensions-circle {
-  0% {
-    transform: rotateX(-100deg) rotate(0);
-  }
+
+.neon {
+  animation: neon 1s ease infinite;
+  -moz-animation: neon 1s ease infinite;
+  -webkit-animation: neon 1s ease infinite;
+}
+
+@keyframes neon {
+  0%,
   100% {
-    transform: rotateX(-100deg) rotate(-360deg);
+    text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+    color: #FED128;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+    color: #806914;
+  }
+}
+
+.flux {
+  animation: flux 2s linear infinite;
+  -moz-animation: flux 2s linear infinite;
+  -webkit-animation: flux 2s linear infinite;
+  -o-animation: flux 2s linear infinite;
+}
+
+@keyframes flux {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+    color: #28D7FE;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+    color: #146C80;
   }
 }
   </style>
+  </body>
