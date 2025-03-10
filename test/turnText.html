@@ -1,0 +1,55 @@
+<ul>
+    <li>이</li>
+    <li>거</li>
+    <li>귀</li>
+    <li>엽</li>
+    <li>다</li>
+    <li>그</li>
+    <li>치</li>
+    <li>집</li>
+    <li>가</li>
+    <li>고</li>
+    <li>싶</li>
+    <li>어</li>
+  </ul>
+  <style>
+        @font-face {
+    font-family: 'BMkkubulimTTF-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/BMkkubulimTTF-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+    body {
+        font-family: 'BMkkubulimTTF-Regular';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+ul {
+  margin: 0;
+  list-style: none;
+  font-size: 4vw;
+  transform-style: preserve-3d;
+  animation: three-dimensions-circle 30s linear infinite;
+}
+li {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+@for $i from 1 through 12 {
+  li:nth-child(#{$i}) {
+    transform: translate(-50%, -50%) rotate(#{$i * 30 - 30}deg) translateY(-260px) rotateX(90deg);
+  }
+}
+@keyframes three-dimensions-circle {
+  0% {
+    transform: rotateX(-100deg) rotate(0);
+  }
+  100% {
+    transform: rotateX(-100deg) rotate(-360deg);
+  }
+}
+  </style>
