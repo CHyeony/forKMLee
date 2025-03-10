@@ -2382,6 +2382,7 @@
 				border-radius: 0;
 				display: block;
 				width: 100%;
+				filter: brightness(70%);
 			}
 
 			.box .image.featured:first-child {
