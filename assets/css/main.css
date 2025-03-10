@@ -2376,6 +2376,8 @@
 			margin: 3em 0 3em -3em;
 			position: relative;
 			width: calc(100% + 6em);
+			height: 280px;
+			overflow: hidden;
 		}
 
 			.box .image.featured img {
@@ -3519,6 +3521,7 @@
 				.box .image.featured {
 					margin-left: -2em;
 					width: calc(100% + 4em);
+					
 				}
 
 					.box .image.featured:first-child {
