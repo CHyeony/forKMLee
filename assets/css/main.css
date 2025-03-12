@@ -2395,6 +2395,11 @@
 
 				.box .image.featured:first-child img {
 					border-radius: 6px 6px 0 0;
+
+				}
+				.box .image.featured:first-child:hover img {
+					transform: scale(1.4);
+					/*cursor: pointer;*/
 				}
 
 			.box .image.featured:last-child {
