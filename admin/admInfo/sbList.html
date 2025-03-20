@@ -39,6 +39,7 @@
     let currentPage = 1;
 const rowsPerPage = 10;
 
+
 function renderTable(category, page = 1) {
     const tbody = $("#listTables tbody");
     tbody.empty();
@@ -54,7 +55,7 @@ function renderTable(category, page = 1) {
         tbody.append(`
             <tr>
                 <td>${item.no}</td>
-                <td><a href='#' onclick='sbEdit();'>${item.name}</a></td>
+                <td><a href='#' onclick='sbEdit("1");'>${item.name}</a></td>
                 <td>${item.qty}</td>
                 <td>${item.note}</td>
                 <td>${item.category}</td>
@@ -64,8 +65,9 @@ function renderTable(category, page = 1) {
     });
     renderPagination(filteredData.length, page);
 }
-function sbEdit(){
-    location.href='/admin/admInfo/sbEdit.html';
+function sbEdit(gubun){
+
+    location.href='/admin/admInfo/sbEdit.html?gubun=\''+gubun+'\'';
 }
 function renderPagination(totalItems, page) {
     const totalPages = Math.ceil(totalItems / rowsPerPage);
@@ -189,7 +191,7 @@ $(document).ready(function () {
         <div class="sch">
             <input type="text" id="schWord" class="schInput" placeholder="설비명을 입력하세요">
             <button onclick="schQna();" class="adminBtn_2">검색</button>
-            <button class="adminBtn_2 rightBtn" onclick="sbEdit();">등록</button>
+            <button class="adminBtn_2 rightBtn" onclick="sbEdit('B');">등록</button>
         </div>
      
         <div id="tabs">

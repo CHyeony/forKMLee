@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/admin/admCss/admStyle.css">
+
+
+<title>경인산업 설비현황 관리</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/script.js" defer></script>
+
+<script>
+       fetch('/admin/admMenu.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('header').innerHTML = data; // HTML 삽입 완료
+        return new Promise(resolve => setTimeout(resolve, 0)); // DOM 업데이트 기다리기
+    })
+    .then(() => {
+        $("#item2").addClass("active"); // jQuery로 클래스 추가
+    })
+    .catch(error => console.error('Error loading menu:', error));
+
+
+    
+    const searchParams = new URL(location.href).searchParams;
+    const wIdx = urlParams.get('name');
+
+  
+
+
+</script>
+<style>
+ 
+.sch{
+    background-color: #a498be8a;
+    padding: 7px 10px;
+    font-size: 15px;
+    font-family: 'GangwonEdu_OTFBoldA';
+    margin: 10px 0px;
+    width: 100%; /* select 박스가 부모 요소의 크기에 맞게 확장 */
+    box-sizing: border-box; /* padding과 border를 너비에 포함시켜 깨짐 방지 */
+
+}
+.qnaViewZone{
+        margin: 60px 20px;
+        /* border: 1px solid #22222d25; */
+        padding: 42px;
+        background-color: #ffffff4a;
+    }
+.qnaViewZone>h1{
+    font-size:30px;
+}
+
+</style>
+
+    
+</head>
+<body class="flex">
+
+    <!-- 사이드바 (헤더) -->
+    <div id="header" class="w-64 h-screen bg-white shadow-md fixed left-0 top-0">
+    </div>
+
+    <!-- 컨텐츠 영역 -->
+    <div class="contentZone flex-1 p-4 ml-64">
+        <h1 class="text-2xl font-bold">설비현황 <span id="editText"></span></h1>
+        <div class="sch">
+          ※ 
+        </div>
+        <div class="qnaViewZone">
+            <button onclick="editInfo();" class="adminBtn_2">수정하기</button>
+            <h1> 최근 수정일자 : <span id="editDate"> 2025-02-12 </span> </h1>
+            <span id="editContent">
+                
+            </span>
+           
+        </div>
+    </div>
+    </div>
+    <script>
+        function editInfo(){
+            if(confirm("수정화면으로 이동하시겠습니까?")){
+                location.href="/admin/admInfo/infoEditer.html"
+            }else{
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
