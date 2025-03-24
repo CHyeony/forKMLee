@@ -23,11 +23,32 @@
 
 
     
-    const searchParams = new URL(location.href).searchParams;
-    const wIdx = urlParams.get('name');
-
+   
+    $(function(){
+        searchParams = new URL(location.href).searchParams;
+        viewControl();
+        
+       
+    });
   
+    function viewControl(){
+        var wIdx = searchParams.get('idx');
+        var wGubun = searchParams.get('gubun');
 
+       
+        console.log(wGubun); // 정리된 값 확인
+        if (wGubun.replace(/[\[\]']/g, "").trim() == 'E') {
+            $("#saveBtn").hide();
+            $(".subjectInput, #sbCateSel").attr("readonly",true);        // readonly 처리
+        
+            console.log('qwe');
+        }else{
+            $("#editBtn").hide();
+            $("#saveBtn").show();
+            $(".subjectInput, #sbCateSel").removeAttr("readonly");       // readonly 삭제
+            console.log('2');
+        }
+    }
 
 </script>
 <style>
@@ -63,29 +84,76 @@
     </div>
 
     <!-- 컨텐츠 영역 -->
-    <div class="contentZone flex-1 p-4 ml-64">
-        <h1 class="text-2xl font-bold">설비현황 <span id="editText"></span></h1>
-        <div class="sch">
-          ※ 
-        </div>
-        <div class="qnaViewZone">
-            <button onclick="editInfo();" class="adminBtn_2">수정하기</button>
-            <h1> 최근 수정일자 : <span id="editDate"> 2025-02-12 </span> </h1>
-            <span id="editContent">
+    <form id="editForm" class="formArea">
+        <div class="contentZone flex-1 p-4 ml-64">
+            <h1 class="text-2xl font-bold">설비현황 <span id="editText"></span></h1>
+            <div class="sch">
+            ※ 
+            </div>
+            <div class="qnaViewZone">
+          
                 
-            </span>
-           
+                <table id="optionWrite" class="optionWrite">
+                    <tr>
+                        <th>카테고리</th>
+                        <td>
+                            <select id="sbCateSel" class="editSelect">
+
+                                <option value="">선택</option>
+                                <option value="A">정밀사출성형기</option>
+                                <option value="B">분쇄기</option>
+                                <option value="C">기타</option>
+                            </select>
+                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>설비명</th>
+                        <td><input type="text" id="sbName" class="subjectInput" placeholder="설비명을 입력하세요"></td>
+                    </tr>
+                    <tr>
+                        <th>수량</th>
+                        <td><input type="text" id="sbCount" class="subjectInput" value="11"></td>
+                    </tr>
+                    <tr>
+                        <th>비고</th>
+                        <td><input type="text" id="sbBgo" class="subjectInput" value="22"></td>
+                    </tr>
+                </table>
+                <button id="editBtn" class="adminBtn_2" onclick="editData();">수정</button>
+                <button id="saveBtn" class="adminBtn_2" onclick="saveData();">저장</button>
+                <p> 등록일자 : <span id="sbNewDate"> 2025-03-24 10:00:00</span></p>
+                <p> 최근수정일자 : <span id="sbEditDate"> 2025-03-24 12:00:00</span></p>
+                </span>
+                <button id="ListBtn" class="adminBtn_2" onclick="goList();">목록</button>
+            
+            </div>
         </div>
-    </div>
-    </div>
-    <script>
-        function editInfo(){
-            if(confirm("수정화면으로 이동하시겠습니까?")){
-                location.href="/admin/admInfo/infoEditer.html"
-            }else{
-                return false;
+        </div>
+        <script>
+            function goList(){
+                if(confirm("목록으로 가시겠습니까?")){
+                    alert(searchParams);
+                }else{
+                    return false;
+                }
             }
-        }
-    </script>
+            function editData(){
+                if(confirm("수정화면으로 이동하시겠습니까?")){
+                    searchParams.set('gubun','U');
+                }else{
+                    return false;
+                }
+            }
+            function saveData(){
+                if(confirm("저장하시겠습니까?")){
+                   alert(searchParams);
+                  
+                }else{
+                    return false;
+                }
+            }
+        </script>
+    </form>
 </body>
 </html>

@@ -1,8 +1,7 @@
 @font-face {
     font-family: 'GangwonEdu_OTFBoldA';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('truetype');
+    
 }
 @font-face {
     font-family: 'GenKJwajinOTF-Rg';
@@ -325,7 +324,20 @@ body {
         font-weight: bold;
         transition: background-color 0.3s ease-in-out;
     }
-
+    /*에디터 화면*/
+    .subjectInput{
+        width:70%;
+    }
+    .editSelect{
+        padding: 5px 10px;
+    }
+    .formArea{
+        width: 100%;
+    }
+    .optionWrite{
+        width:100%;
+    }
+   
     /*글자 색*/
     .green {
         color: rgb(0, 77, 0);

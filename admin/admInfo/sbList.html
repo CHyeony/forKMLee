@@ -55,7 +55,7 @@ function renderTable(category, page = 1) {
         tbody.append(`
             <tr>
                 <td>${item.no}</td>
-                <td><a href='#' onclick='sbEdit("1");'>${item.name}</a></td>
+                <td><a href='#' onclick='sbEdit("E","IDX");'>${item.name}</a></td>
                 <td>${item.qty}</td>
                 <td>${item.note}</td>
                 <td>${item.category}</td>
@@ -65,9 +65,9 @@ function renderTable(category, page = 1) {
     });
     renderPagination(filteredData.length, page);
 }
-function sbEdit(gubun){
+function sbEdit(gubun, indexNo){
 
-    location.href='/admin/admInfo/sbEdit.html?gubun=\''+gubun+'\'';
+    location.href='/admin/admInfo/sbEdit.html?gubun=\''+gubun+'\'&idx=\''+1+'\'';
 }
 function renderPagination(totalItems, page) {
     const totalPages = Math.ceil(totalItems / rowsPerPage);
@@ -191,7 +191,7 @@ $(document).ready(function () {
         <div class="sch">
             <input type="text" id="schWord" class="schInput" placeholder="설비명을 입력하세요">
             <button onclick="schQna();" class="adminBtn_2">검색</button>
-            <button class="adminBtn_2 rightBtn" onclick="sbEdit('B');">등록</button>
+            <button class="adminBtn_2 rightBtn" onclick="sbEdit('N','');">등록</button>
         </div>
      
         <div id="tabs">
