@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/admin/admCss/admStyle.css">
+
+
+<title>경인산업 소개말 내역</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/script.js" defer></script>
+
+<script>
+       fetch('/admin/admMenu.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('header').innerHTML = data; // HTML 삽입 완료
+        return new Promise(resolve => setTimeout(resolve, 0)); // DOM 업데이트 기다리기
+    })
+    .then(() => {
+        $("#item3").addClass("active"); // jQuery로 클래스 추가
+    })
+    .catch(error => console.error('Error loading menu:', error));
+
+
+    const data = [
+            { no: 1, subject: "정밀사출성형기 문의", 	regDate: "2025-02-10", ansYN: "답변완료", ansDate: "2025-02-11", regiMan : "김작성",category: "답변완료"},
+            { no: 2, subject: "정밀사출성형기 문의22",  regDate: "2025-02-10", ansYN: "답변대기",	ansDate: "", 		regiMan : "이작성",	category: "미답변" },
+            { no: 3, subject: "무언가 문의", 			regDate: "2025-02-10", ansYN: "답변완료", ansDate: "2025-02-11",regiMan : "박작성",category: "답변완료" },
+            { no: 4, subject: "쓸데없는문의",			regDate: "2025-02-10", ansYN: "답변완료", ansDate: "2025-02-11",regiMan : "최작성",category: "답변완료" },
+            { no: 5, subject: "쓸데없이큰지팡이", 		regDate: "2025-02-10", ansYN: "답변대기", ansDate: "",			regiMan : "권작성",category: "미답변" },
+            { no: 6, subject: "정밀사출성형기 문의", 	regDate: "2025-02-10", ansYN: "답변완료", ansDate: "2025-02-11", regiMan : "조작성",category: "답변완료" },
+            { no: 7, subject: "정밀사출성형기 문의22",  regDate: "2025-02-10", ansYN: "답변대기",	ansDate: "", 			regiMan : "뱎작성",category: "미답변" },
+            { no: 8, subject: "무언가 문의", 			regDate: "2025-02-10", ansYN: "답변완료", ansDate: "2025-02-11",regiMan : "왕작성",category: "답변완료" },
+            { no: 9, subject: "쓸데없는문의",			regDate: "2025-02-10", ansYN: "답변완료", ansDate: "2025-02-11",regiMan : "김작성",category: "답변완료" },
+            { no: 10, subject: "쓸데없이큰지팡이", 		regDate: "2025-02-10", ansYN: "답변대기", ansDate: "",			regiMan : "김작성",category: "미답변" },
+            { no: 11, subject: "정밀사출성형기 문의", 	regDate: "2025-02-10", ansYN: "답변완료", ansDate: "2025-02-11", regiMan : "김작성",category: "답변완료" },
+            { no: 12, subject: "정밀사출성형기 문의22",  regDate: "2025-02-10", ansYN: "답변대기",	ansDate: "", 		regiMan : "김작성",	category: "미답변" },
+            { no: 13, subject: "무언가 문의", 			regDate: "2025-02-10", ansYN: "답변완료", ansDate: "2025-02-11",regiMan : "김작성",category: "답변완료" },
+            { no: 14, subject: "쓸데없는문의",			regDate: "2025-02-10", ansYN: "답변완료", ansDate: "2025-02-11",regiMan : "김작성",category: "답변완료" },
+            { no: 15, subject: "쓸데없이큰지팡이", 		regDate: "2025-02-10", ansYN: "답변대기", ansDate: "",			regiMan : "김작성",category: "미답변" }
+    ];
+    let currentPage = 1;
+const rowsPerPage = 10;
+
+function renderTable(category, page = 1) {
+    const tbody = $("#listTables tbody");
+    tbody.empty();
+
+    const filteredData = category === "전체보기" ? data : data.filter(item => item.category === category);
+
+    // 페이지에 맞게 데이터 잘라서 보여주기
+    const startIndex = (page - 1) * rowsPerPage;
+    const pagedData = filteredData.slice(startIndex, startIndex + rowsPerPage);
+
+    pagedData.forEach(item => {
+        const ansDateClass = item.ansYN === "답변완료" ? "green" : "blue";
+        tbody.append(`
+            <tr>
+                <td>${item.no}</td>
+                <td><a href='/admin/admQna/qnaView.html'>${item.subject}</a></td>
+                <td>${item.regDate}</td>
+                <td class="${ansDateClass}">${item.ansYN}</td>
+                <td>${item.ansDate}</td>
+                <td>${item.regiMan}</td>
+            </tr>
+        `);
+    });
+    renderPagination(filteredData.length, page);
+}
+
+function renderPagination(totalItems, page) {
+    const totalPages = Math.ceil(totalItems / rowsPerPage);
+    const pagination = $("#pagination");
+    pagination.empty();
+
+    // 이전 페이지 버튼
+    if (page > 1) {
+        pagination.append(`
+            <span class="page" data-page="${page - 1}">&lt;</span>
+        `);
+    }
+
+    // 페이지 번호들
+    const startPage = Math.max(1, page - 2);  // 시작 페이지는 현재 페이지에서 두 개 전
+    const endPage = Math.min(totalPages, page + 2); // 끝 페이지는 현재 페이지에서 두 개 후
+
+    for (let i = startPage; i <= endPage; i++) {
+        pagination.append(`
+            <span class="page" data-page="${i}">${i}</span>
+        `);
+    }
+
+    // 다음 페이지 버튼
+    if (page < totalPages) {
+        pagination.append(`
+            <span class="page" data-page="${page + 1}">&gt;</span>
+        `);
+    }
+
+    $(".page").on("click", function () {
+        currentPage = $(this).data("page");
+        renderTable($(".tab.activeTab").data("category"), currentPage);
+    });
+}
+
+function schQna(){
+    var schWd = $("#schWord").val();
+    var option = $("#schOption").val()==='subject'?'제목' : '작성자';
+    
+    alert(option + "검색 :: "+ schWd);
+}
+$(document).ready(function () {
+    renderTable("전체보기", currentPage);
+
+    $(".tab").on("click", function () {
+        $(".tab").removeClass("activeTab");
+        $(this).addClass("activeTab");
+        renderTable($(this).data("category"), currentPage);
+    });
+});
+
+
+</script>
+<style>
+ 
+.sch{
+    background-color: #a498be8a;
+    padding: 7px 10px;
+    font-size: 15px;
+    font-family: 'GangwonEdu_OTFBoldA';
+    margin: 10px 0px;
+    width: 100%; /* select 박스가 부모 요소의 크기에 맞게 확장 */
+    box-sizing: border-box; /* padding과 border를 너비에 포함시켜 깨짐 방지 */
+
+}
+.qnaViewZone{
+        margin: 60px 20px;
+        /* border: 1px solid #22222d25; */
+        padding: 42px;
+        background-color: #ffffff4a;
+    }
+.qnaViewZone>h1{
+    font-size:30px;
+}
+
+</style>
+
+    
+</head>
+<body class="flex">
+
+    <!-- 사이드바 (헤더) -->
+    <div id="header" class="w-64 h-screen bg-white shadow-md fixed left-0 top-0">
+    </div>
+
+    <!-- 컨텐츠 영역 -->
+    <div class="contentZone flex-1 p-4 ml-64">
+        <h1 class="text-2xl font-bold">사출서비스 안내 관리</h1>
+        <div class="sch">
+          ※ 수정 후 이전 이력 및 내용 확인불가.
+        </div>
+        <div class="qnaViewZone">
+            <button onclick="editInfo();" class="adminBtn_2">수정하기</button>
+            <h1> 최근 수정일자 : <span id="editDate"> 2025-02-12 </span> </h1>
+            <span id="editContent">
+                경인산업은 고객사의 제품을 자사의 제품이라 생각하고 면밀히 검토하겠습니다.
+                제품의 개발이란 쉽지 않고 그만큼 파트너가 중요합니다.
+            </span>
+            <span id="imageZone">
+                <img src="/images/flow.png">
+            </span>
+        </div>
+    </div>
+    </div>
+    <script>
+        function editInfo(){
+            if(confirm("수정화면으로 이동하시겠습니까?")){
+                location.href="/admin/admInfo/serviceEditer.html"
+            }else{
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
