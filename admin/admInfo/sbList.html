@@ -67,7 +67,8 @@ function renderTable(category, page = 1) {
 }
 function sbEdit(gubun, indexNo){
 
-    location.href='/admin/admInfo/sbEdit.html?gubun=\''+gubun+'\'&idx=\''+1+'\'';
+    location.href = '/admin/admInfo/sbEdit.html?gubun=' + encodeURIComponent(gubun) + '&idx=' + encodeURIComponent(1);
+
 }
 function renderPagination(totalItems, page) {
     const totalPages = Math.ceil(totalItems / rowsPerPage);

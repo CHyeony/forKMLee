@@ -25,24 +25,27 @@
     
    
     $(function(){
-        searchParams = new URL(location.href).searchParams;
-        viewControl();
-        
-       
+        searchParams = new URLSearchParams(window.location.search);
+        viewControl();       
     });
   
     function viewControl(){
         var wIdx = searchParams.get('idx');
         var wGubun = searchParams.get('gubun');
 
-       
-        console.log(wGubun); // 정리된 값 확인
-        if (wGubun.replace(/[\[\]']/g, "").trim() == 'E') {
+       // $("#gubun").val(wGubun.replace(/[\[\]']/g, "").trim());
+       $("#gubun").val(wGubun);
+               
+        if ($("#gubun").val() === 'E') {
+            // VIEW 화면일 경우
             $("#saveBtn").hide();
             $(".subjectInput, #sbCateSel").attr("readonly",true);        // readonly 처리
-        
+            $("#idx").val(idx);
+            
+
             console.log('qwe');
         }else{
+            // 신규 등록 or 수정모드
             $("#editBtn").hide();
             $("#saveBtn").show();
             $(".subjectInput, #sbCateSel").removeAttr("readonly");       // readonly 삭제
@@ -85,6 +88,8 @@
 
     <!-- 컨텐츠 영역 -->
     <form id="editForm" class="formArea">
+        <input type="hidden" id="gubun" name="gubun" value="">
+        <input type="hidden" id="idx" name="idx" value="">
         <div class="contentZone flex-1 p-4 ml-64">
             <h1 class="text-2xl font-bold">설비현황 <span id="editText"></span></h1>
             <div class="sch">
@@ -120,27 +125,30 @@
                         <td><input type="text" id="sbBgo" class="subjectInput" value="22"></td>
                     </tr>
                 </table>
-                <button id="editBtn" class="adminBtn_2" onclick="editData();">수정</button>
-                <button id="saveBtn" class="adminBtn_2" onclick="saveData();">저장</button>
+                
                 <p> 등록일자 : <span id="sbNewDate"> 2025-03-24 10:00:00</span></p>
                 <p> 최근수정일자 : <span id="sbEditDate"> 2025-03-24 12:00:00</span></p>
                 </span>
-                <button id="ListBtn" class="adminBtn_2" onclick="goList();">목록</button>
+                <div class="underBtnZone">
+                    <button id="editBtn" class="adminBtn_2" onclick="editData();">수정</button>
+                    <button id="saveBtn" class="adminBtn_2" onclick="saveData();">저장</button>
+                    <a href="sbList.html" id="goListBtn" class="goListBtn">목록</a>
+                </div>
             
             </div>
         </div>
         </div>
         <script>
-            function goList(){
-                if(confirm("목록으로 가시겠습니까?")){
-                    alert(searchParams);
-                }else{
-                    return false;
-                }
-            }
+            
             function editData(){
                 if(confirm("수정화면으로 이동하시겠습니까?")){
-                    searchParams.set('gubun','U');
+             
+                    $("#gubun").val("U");
+
+                    $("#editBtn").hide();
+                    $("#saveBtn").show();
+                    $(".subjectInput, #sbCateSel").removeAttr("readonly");       // readonly 삭제
+                 
                 }else{
                     return false;
                 }
@@ -153,6 +161,8 @@
                     return false;
                 }
             }
+
+           
         </script>
     </form>
 </body>

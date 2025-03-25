@@ -290,6 +290,19 @@ body {
         float: right;
     }
 
+    .underBtnZone{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+    
+    }
+    .goListBtn{
+        border-radius: 2px;
+        text-decoration: none;
+        background-color: #c9c2d7;
+        padding: 10px 12px;
+    }
+
     /* INPUT 창 */
     .infoInput{
         border:1px solid #000;
