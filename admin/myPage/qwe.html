@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.14.1/flowchart.min.js"></script>
+</head>
+<body>
+    <div id="diagram"></div>
+    <script>
+        var diagramCode = `
+            st=>start: 거래 시작
+            op1=>operation: 카드 삽입 및 비밀번호 입력
+            cond1=>condition: 잔액이 충분한가?
+            op2=>operation: 출금 처리 및 잔액 차감
+            op3=>operation: 영수증 출력
+            e=>end: 거래 종료
+
+            st->op1->cond1
+            cond1(yes)->op2->op3->e
+            cond1(no)->e
+        `;
+        flowchart.parse(diagramCode).drawSVG("diagram");
+    </script>
+</body>
+</html>

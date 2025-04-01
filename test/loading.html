@@ -1,93 +1,46 @@
-<section id="loadingText">
-    <div class="progress">
-        <div class="progress-container">
-          <label>	C </label>
-          <label>	O</label>
-          <label>	D</label>
-          <label>	E</label>
-          <label>	P</label>
-          <label>	E</label>
-          <label>	N</label>
-        </div>
-      </div>
-</section>
+<!--
+
+Follow me on
+Instagram: https://www.instagram.com/supahfunk/
+Dribbble: https://dribbble.com/supahfunk
+Twitter: https://twitter.com/supahfunk
+Codepen: https://codepen.io/supah/
+
+-->
 <style>
-    
-.progress {
-  
-  position: absolute;
-  top: 100%;
-  left: 0;
-  height: 100%;
+ @keyframes scroll-animation{
+  0%{
+    left: 0;
+  }
+  100%{
+    left: -400px; /* 텍스트 width와 동일 */
+  }
+}
+.scroll-text{
   width: 100%;
+  overflow: hidden;
 }
-
-.progress-container {
-  transform: translateY(-50%);
-  top: 50%;
-  position: absolute;
-  width: calc(100% - 200px);
-  color: #000;
-  padding: 0 100px;
-  text-align: center;
+.track{
+  position: relative;
+  width: 2800px;
+  animation: scroll-animation 5s linear infinite;
 }
-
-.progress-container label {
-  font-size: 20px;
-  opacity: 0;
-  display:inline-block;
+.track p{
+  float: left;
+  width: 400px;
+  font-size: 36px;
 }
-
-@keyframes anim {
-  0% {
-    opacity: 0;
-    transform: translateX(-300px);
-  }
-  33% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-  66% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(300px);
-  }
-}
-
-@-webkit-keyframes anim {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-300px);
-  }
-  33% {
-    opacity: 1;
-    -webkit-transform: translateX(0px);
-  }
-  66% {
-    opacity: 1;
-    -webkit-transform: translateX(0px);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateX(300px);
-  }
-}
-
 </style>
-<script>
-    $(document).ready(function() {
-	var inputs = $(".progress-container").find($("label") );
-	
-	for(var i =0 ; i< inputs.length; i ++)
-	{ 
-	     var index = i +1;
-		 var time = ((inputs.length)-i ) * 100;
-		$(".progress-container label:nth-child("+ index+")").css( "-webkit-animation", "anim 3s "+time+"ms infinite ease-in-out" );
-		$(".progress-container label:nth-child("+index+")").css( "-animation", "anim 3s "+time+"ms infinite ease-in-out" );
-	}
-
-})
-</script>
+<div class="scroll-text">
+    <div class="track">
+      <p>SCROLL TEXT</p>
+      <p>SCROLL TEXT</p>
+      <p>SCROLL TEXT</p>
+      <p>SCROLL TEXT</p>
+      <p>SCROLL TEXT</p>
+      <p>SCROLL TEXT</p>
+      <p>SCROLL TEXT</p>
+    </div>
+  </div>
+ 
+  
