@@ -1,6 +1,13 @@
 <head>
     <style>
-        body, html {
+
+@font-face {
+    font-family: 'PFStardustExtraBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2506-1@1.0/PFStardustExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+body, html {
     margin: 0;
     padding: 0;
     background-color: #151912;
@@ -9,7 +16,8 @@
 
 .content {
     width: 100vw;
-    font-family: 'Times New Roman', serif;
+    /*font-family: 'Times New Roman', serif;*/
+      font-family: 'PFStardustExtraBold';
 }
 
 .section {
@@ -89,7 +97,7 @@ a {
 a:hover {
     font-weight: inherit;
     text-decoration: none;
-    color: rgb(160, 160, 255);
+    color: rgb(10, 10, 65);
 }
 
 a:active {
@@ -99,12 +107,13 @@ a:active {
 body, html {
     margin: 0;
     padding: 0;
-    background-color: #151912;
+    background-color: #151912; 
 }
 
 .content {
     width: 100vw;
-    font-family: 'Times New Roman', serif;
+    /*font-family: 'Times New Roman', serif;*/
+      font-family: 'PFStardustExtraBold';
 }
 
 .section {
@@ -184,24 +193,64 @@ a {
 a:hover {
     font-weight: inherit;
     text-decoration: none;
-    color: rgb(160, 160, 255);
+    color: rgb(136, 26, 26);
 }
 
 a:active {
-    color: rgb(160, 255, 255);
+    color: rgb(110, 71, 13);
 }
 .one-section{
     background-color:#fff;
     width: 85%;
     height: 85%;
+    padding-top: 25px; /* 원하는 수치로 조절 */
+    
 }
+
+.one-section > nav > ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    font-family: 'PFStardustExtraBold';
+    align-items: center;
+    margin-top:0;
+   
+}
+
+.one-section > nav > ul > li {
+    list-style: none;
+    color: #000;
+    font-size: 20px;
+    font-family: 'PFStardustExtraBold';
+    padding: 15px;
+}
+
+.one-section > nav > ul > li:first-child {
+    margin-right: auto;
+    font-style: italic;
+    font-weight: 800;
+    font-size:35px;
+    padding-left: 10px;
+}
+
+
     </style>
 </head>
 <body>
 <div class="content">
     <div class="section">
         <div class="one-section">
-            I'm chae yeon
+            <nav>
+                <ul>
+                    <li>DEFENCE CARBON</li>
+                    <li>회사 소개</li>
+                    <li>사업분야</li>
+                    <li>시험장비</li>
+                    <li>주요실적</li>
+                    <li>시험평가</li>
+                </ul>
+
+            </nav>
         </div>
     </div>
     <div class="section">
