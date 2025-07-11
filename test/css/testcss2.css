@@ -306,6 +306,7 @@
   margin-top: 16%;
   position: relative;
   z-index: 1;
+  font-family: 'GongGothicMedium';
 }
 
 .map-wrapper {
@@ -328,7 +329,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 160px;
+  width: 260px;
   height: 40px;
   background-color: #1a1c38;
   color: #fff;
