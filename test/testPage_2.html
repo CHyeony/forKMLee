@@ -150,6 +150,7 @@
             background: #423738;
             clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
             box-shadow: 0 0 1px #000;
+            font-family: 'KIMM_MI';
         }
 
         .hex1 { top: -14%;right: 96%; transform: scale(0.7);   
@@ -340,7 +341,12 @@ footer{
 
 /*BUTTON EFFECT*/
 
-
+h1 {
+  padding: 50px 0;
+  font-size: 45px;
+  text-align: center;
+  color: rgb(54, 56, 55);
+}
 :active, :hover, :focus {
   outline: 0!important;
   outline-offset: 0;
@@ -428,6 +434,58 @@ footer{
 .btn.hover-border-11 span:hover::after {
   height: 0%;
 }
+
+
+
+/* scroll */
+.scroll-nav {
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  z-index: 999;
+  font-family: 'KIMM_Bold';
+}
+
+.scroll-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.scroll-nav li {
+  color: #ccc;
+  font-size: 14px;
+  margin: 15px 0;
+  cursor: pointer;
+  position: relative;
+  padding-left: 20px;
+  transition: color 0.3s;
+}
+
+.scroll-nav li span {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.scroll-nav li.active {
+  color: #fff;
+
+}
+
+.scroll-nav li.active span {
+    background: #fff;
+  border: 2px solid #F48315;
+  box-shadow: 0 0 8px #F48315aa;
+  width: 12px;
+  height: 12px;
+}
     </style>
 </head>
 <body>
@@ -507,7 +565,12 @@ footer{
                 <a href="#">Pinterest</a>
                 <a href="#">Google+</a>
             </div> -->
-            
+            <div class="scroll-nav">
+                <ul>
+                    <li data-target="#firstSec" class="active"><span></span>INTRO</li>
+                    <li data-target="#seconSec"><span></span>LOCATION</li>
+                </ul>
+            </div>
         </div>
     </section>
     <section id="seconSec">
@@ -516,15 +579,43 @@ footer{
                 <div class="title"><strong>LOCATION</strong></div>
                 <div class="locationMap">
                     <img src="/images/test/mapLocation.png" alt="map" width="70%;">
-                    <p style="color:#000; font-size: 1.3rem;"> <b> - Company Address</b></p>
-                    <p style="color:#000; "> Department of Mechanical Engineering, N7-609, Hanbat National University, Dongseo-daero 125, Yuseong-Gu, DaeJeon, 341-58, Rep of Korea
-</p>                <p style="color:#000; font-size: 1.3rem;"> <b> - Company Number</b></p>
-                    <p style="color:#000; "> Tel) +82-42-821-1470 / Fax) +82-42-821-1587 </p>
+                    <p style="color:#fff; font-size: 1.3rem;"> <b> - Company Address</b></p>
+                    <p style="color:#fff; "> Department of Mechanical Engineering, N7-609, Hanbat National University, Dongseo-daero 125, Yuseong-Gu, DaeJeon, 341-58, Rep of Korea
+</p>                <p style="color:#fff; font-size: 1.3rem;"> <b> - Company Number</b></p>
+                    <p style="color:#fff; "> Tel) +82-42-821-1470 / Fax) +82-42-821-1587 </p>
                 </div>
               
              </div>
         </div>
     </section>
+    <script>
+         // 클릭 시 이동
+  document.querySelectorAll('.scroll-nav li').forEach(item => {
+    item.addEventListener('click', () => {
+      const target = document.querySelector(item.getAttribute('data-target'));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // 스크롤 따라 active 처리
+  const sections = ['#firstSec', '#seconSec', '#thirdSec', '#fourthSec'];
+  window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY || document.documentElement.scrollTop;
+
+    sections.forEach((id, idx) => {
+      const section = document.querySelector(id);
+      if (section && scrollPos >= section.offsetTop - window.innerHeight / 2) {
+        document.querySelectorAll('.scroll-nav li').forEach(li => li.classList.remove('active'));
+        document.querySelectorAll('.scroll-nav li')[idx].classList.add('active');
+      }
+    });
+  });
+    </script>
 </body>
 <footer>
     <div id="footerDiv">
