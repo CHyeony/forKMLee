@@ -139,6 +139,14 @@
                 transform: translateY(0);
             }
         }
+        
+        .ract-shape{
+            background: rgba(255, 255, 255, 0.2); /* 반투명 */
+            backdrop-filter: blur(10px); /* 블러 효과 */
+            position: absolute;
+            width: 50%;
+            height: 100%;
+        }
         .hex-cluster {
             position: absolute;
             top: 57%;
@@ -148,15 +156,17 @@
             height: 500px;
             font-family: 'GongGothicLight';
         }
-
-        .ract-shape{
-            background: rgba(255, 255, 255, 0.2); /* 반투명 */
-            backdrop-filter: blur(10px); /* 블러 효과 */
-            position: absolute;
-            width: 50%;
-            height: 100%;
+        .hex-shape:hover {
+        clip-path: inset(0); /* 육각형 → 네모 */
+        background-color: #202851;
+        z-index: 1;
+        }
+        .hex-shape:hover .hexP {
+        font-size: 2rem;
+        color: #ff0;
         }
         .hex-shape {
+            transition: clip-path 0.5s ease, background-color 0.5s ease;
             color:#eeeeee;
             position: absolute;
             width: 250px;
@@ -201,6 +211,10 @@
             font-size: 2rem;
           
         }
+
+
+
+        
         .socials {
             position: relative;
             z-index: 1;
