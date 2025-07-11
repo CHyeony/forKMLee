@@ -96,7 +96,25 @@
             font-style: italic;
             
         }
+.title .letter {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(20px);
+  animation: fadeInUp 0.4s ease forwards;
+}
 
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title .highlight {
+  color: #709ac3;
+  font-size: 4.5rem;
+  font-weight: bold;
+}
         #titleLogo{
             font-size: 2rem;
             font-style: italic;
@@ -143,9 +161,11 @@
             position: absolute;
             width: 250px;
             aspect-ratio: 1;
-            background: #94a2bf;
+            background: #94a2bf; 
+          
             clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
             box-shadow: 0 0 1px #000;
+            
             font-family: 'GongGothicLight';
         }
 

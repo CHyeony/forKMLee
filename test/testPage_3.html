@@ -164,6 +164,40 @@ window.addEventListener('scroll', () => {
     seconSec.classList.add('active-section');
   }
 });
+
+
+// TITLE
+document.addEventListener('DOMContentLoaded', () => {
+  const title = document.querySelector('.title');
+  const originalNodes = Array.from(title.childNodes);
+  title.innerHTML = ''; // 기존 텍스트 비움
+
+  let charIndex = 0;
+
+  originalNodes.forEach(node => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      // 일반 텍스트 처리
+      node.textContent.split('').forEach(char => {
+        const span = document.createElement('span');
+        span.textContent = char;
+        span.style.animationDelay = `${charIndex * 0.05}s`;
+        span.classList.add('letter');
+        title.appendChild(span);
+        charIndex++;
+      });
+    } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'STRONG') {
+      // <strong> 안쪽도 글자마다 처리
+      node.textContent.split('').forEach(char => {
+        const span = document.createElement('span');
+        span.textContent = char;
+        span.style.animationDelay = `${charIndex * 0.05}s`;
+        span.classList.add('letter', 'highlight');
+        title.appendChild(span);
+        charIndex++;
+      });
+    }
+  });
+});
     </script>
 </body>
 <footer>
