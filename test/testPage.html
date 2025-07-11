@@ -273,13 +273,48 @@
     padding-top:30px;
 }
 .textInput{
-    display: block;
+  display: block;
     border: 2px solid #fff;
     background-color: #c0c0c000;
     border-radius: 3px;
-    width: 30%;
-    height: 20%;
+    width: 100%;
+    height: 100%;
+    padding: 10px 40px 10px 10px; /* 오른쪽 패딩을 넉넉하게 */
+    color: #fff;
+    font-family: 'KIMM_Bold';
+    margin-top:30px;
+    box-sizing: border-box;
 }
+
+.searchIcon{
+    width: 20px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(600%);
+    width: 20px;
+   
+}
+.btnIcon{
+    cursor: pointer;
+}
+
+
+
+
+/*FOOTER*/
+footer{
+    background: url('/images/test/carbonImage.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll; /* ← 이게 핵심! (기본값이긴 해도 명시적으로 써주는 게 좋아) */
+    position: relative;
+    z-index: 1;
+}
+
+#footerDiv{
+   padding: 40px 100px;
+}
+
     </style>
 </head>
 <body>
@@ -329,7 +364,8 @@
                 Defence Carbon is a specialized in composite materials company primarily engaged in composite structure design and<br>
                 analysis, pressure vessel hydrostatic testing, <br>carbon fiber strand specimen fabrication and testing, <br>as well as composite material property testing and evaluation under low and high-temperature environments.
                 advanced materials, innovation, cutting-edge technology...
-                <input type="text" id="searchParam" class="textInput" value="">
+                <input type="text" id="searchParam" class="textInput" value="" placeholder="search">
+                <a href="#" onclick="" class="btnIcon"><img src="/images/test/search.png" class="searchIcon"></a>
             </div>
 
             <div class="hex-cluster">
@@ -370,7 +406,12 @@
     </section>
 </body>
 <footer>
-    sssssssssss
+    <div id="footerDiv">
+        Department of Mechanical Engineering, N7-609, Hanbat National University, Dongseo-daero 125, Yuseong-Gu, DaeJeon, 341-58, Rep. of Korea<br>
+        <br>Tel: +82-42-821-1470 / Fax: +82-42-821-1587​ / E-mail: lscae.laboratory@gmail.com<br>
+        <br>COPYRIGHT (c) 2023, Defence Carbon, ALL RIGHT RESERVED
+    </div>
+  
 </footer>
 
 </html>
