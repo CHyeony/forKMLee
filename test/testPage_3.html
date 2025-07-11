@@ -50,7 +50,7 @@
         </nav>
        
         <div class="content">
-            <div class="title"><strong>D</strong>EFENCE <strong>C</strong>ARBON</div>
+            <div class="title  typing-on-scroll"><strong>D</strong>EFENCE <strong>C</strong>ARBON</div>
             <div class="subtitle">
                 Defence Carbon is a specialized in composite materials company primarily engaged in composite structure design and<br>
                 analysis, pressure vessel hydrostatic testing, <br>carbon fiber strand specimen fabrication and testing, <br>as well as composite material property testing and evaluation under low and high-temperature environments.
@@ -95,7 +95,7 @@
     <section id="seconSec">
     <div>
         <div class="content">
-        <div class="title"><strong>L</strong>OCATION</div>
+        <div class="title typing-on-scroll"><strong>L</strong>OCATION</div>
         <div class="locationMap">
             <div class="map-wrapper">
             <img src="/images/test/map1.png" class="map-img">
@@ -165,40 +165,57 @@ window.addEventListener('scroll', () => {
   }
 });
 
-
-// TITLE
-document.addEventListener('DOMContentLoaded', () => {
-  const title = document.querySelector('.title');
-  const originalNodes = Array.from(title.childNodes);
-  title.innerHTML = ''; // 기존 텍스트 비움
-
-  let charIndex = 0;
-
-  originalNodes.forEach(node => {
-    if (node.nodeType === Node.TEXT_NODE) {
-      // 일반 텍스트 처리
-      node.textContent.split('').forEach(char => {
-        const span = document.createElement('span');
-        span.textContent = char;
-        span.style.animationDelay = `${charIndex * 0.05}s`;
-        span.classList.add('letter');
-        title.appendChild(span);
-        charIndex++;
-      });
-    } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'STRONG') {
-      // <strong> 안쪽도 글자마다 처리
-      node.textContent.split('').forEach(char => {
-        const span = document.createElement('span');
-        span.textContent = char;
-        span.style.animationDelay = `${charIndex * 0.05}s`;
-        span.classList.add('letter', 'highlight');
-        title.appendChild(span);
-        charIndex++;
-      });
-    }
-  });
-});
     </script>
+
+    <!--TITLE-->
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const titles = document.querySelectorAll('.typing-on-scroll');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains('typed')) {
+        animateTitle(entry.target);
+        entry.target.classList.add('typed'); // 중복 방지
+      }
+    });
+  }, { threshold: 0.6 });
+
+  titles.forEach(title => observer.observe(title));
+
+  function animateTitle(title) {
+    const originalNodes = Array.from(title.childNodes);
+    const spans = [];
+    let charIndex = 0;
+
+    originalNodes.forEach(node => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        node.textContent.split('').forEach(char => {
+          const span = document.createElement('span');
+          span.textContent = char;
+          span.classList.add('letter');
+          span.style.animationDelay = `${charIndex * 0.07}s`;
+          spans.push(span);
+          charIndex++;
+        });
+      } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'STRONG') {
+        node.textContent.split('').forEach(char => {
+          const span = document.createElement('span');
+          span.textContent = char;
+          span.classList.add('letter', 'highlight');
+          span.style.animationDelay = `${charIndex * 0.07}s`;
+          spans.push(span);
+          charIndex++;
+        });
+      }
+    });
+
+    title.innerHTML = '';
+    spans.forEach(span => title.appendChild(span));
+  }
+});
+</script>
+
 </body>
 <footer>
     <div id="footerDiv">
