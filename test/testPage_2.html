@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defence Carbon</title>
+    <style>
+@font-face {
+    font-family: 'KIMM_Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'KIMM_MI';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+     font-family: 'DungGeunMo';
+     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+        body {
+            margin: 0;
+            /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+            /* font-family: 'KIMM_Bold'; */
+            background: url('/images/test/aerospace3.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            color: white;
+            animation: zoomInBg 5s ease-out forwards;
+        }
+
+    
+    @keyframes zoomInBg {
+            0% {
+                background-size: 115%;
+            }
+            100% {
+                background-size: 100%;
+            }
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 145px 40px 80px 40px; /* 상단 여백 증가 */
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            color: white;
+            position: relative;
+            z-index: 1;
+            font-family: 'KIMM_Bold';
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-family: 'KIMM_Bold';
+            margin: 0 15px;
+        }
+ 
+        .title {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            opacity: 1;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+            font-family: 'KIMM_Bold';
+
+            
+        }
+
+        #titleLogo{
+            font-size: 2rem;
+            font-style: italic;
+        }
+        .pointfont{
+            font-size: 2.4rem;
+            color:#F48315;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            max-width: 48%;
+            line-height: 1.5;
+               opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.5s;
+            font-family: 'KIMM_MI';
+        }
+         @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hex-cluster {
+            position: absolute;
+            top: 57%;
+            right: 5%;
+            transform: translateY(-50%);
+            width: 300px;
+            height: 500px;
+            font-family: 'KIMM_MI';
+        }
+
+        .ract-shape{
+            background: rgba(255, 255, 255, 0.2); /* 반투명 */
+            backdrop-filter: blur(10px); /* 블러 효과 */
+            position: absolute;
+            width: 50%;
+            height: 100%;
+        }
+        .hex-shape {
+            color:#eeeeee;
+            position: absolute;
+            width: 250px;
+            aspect-ratio: 1;
+            background: #423738;
+            clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+            box-shadow: 0 0 1px #000;
+        }
+
+        .hex1 { top: -8%;right: 91%; transform: scale(0.7);   
+            /* background-image: url('/images/test/aerospace2.jpg');
+            background-size: cover;
+            background-position: center; */
+      
+        }
+        .hex2 { top: 33%; right: 156%; transform: scale(1.5); 
+            background: url('/images/test/carbonImage.jpg') no-repeat center center;
+            background-size: cover;
+            background-position: center; 
+        }
+        .hex3 { top: 80%; right: 11%; transform: scale(0.9); }
+        .hex4 { top: 32%; right: 48%; transform: scale(1.1); }
+        .hex5 { top: 88%; right: 96%; transform: scale(1.1); }
+        .hex6 {
+            top: 72%;
+            right: 165%;
+            background: #E59312;
+            z-index: 10;
+        }
+
+        .hexP{ margin:0 auto; padding-top:100px; text-align:center; font-size:1.7rem;}
+        .hexP:hover{
+            font-size: 2rem;
+        }
+        .socials {
+            position: relative;
+            z-index: 1;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .socials a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        strong {
+            color: #F48315;
+        }
+
+        /*네비게이션*/
+        
+/* 네비게이션 바 */
+.navbar {
+    float: right;
+    align-items: center;
+    margin-top: 19.92px;
+    font-family: 'KIMM_Bold';
+    width: 63%;
+}
+
+
+/* 메뉴 링크 */
+.nav-links a {
+    text-decoration: none;
+    color: #efefefa6;
+    padding-right:35px;
+    font-size: 16px; /* 메뉴 폰트 크기 */
+    transition: color 0.3s ease;
+}
+/* 네비게이션 메뉴 스타일 */
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    gap:20px;
+    padding: 7px 50px;
+}
+
+.nav-item {
+    position: relative; /* 드롭다운 메뉴를 감싸는 부모 */
+}
+
+/* 메뉴 링크 기본 스타일 */
+.nav-item a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+   
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.nav-item:hover .dropdown,
+.nav-item:focus-within .dropdown,
+.dropdown:hover {
+    visibility: visible; /* 드롭다운이 보이도록 설정 */
+    opacity: 1; /* 드롭다운을 불투명하게 설정 */
+     
+}
+/* 드롭다운 메뉴 스타일 */
+.dropdown {
+    position: absolute;
+    top: 100%; /* 부모 요소 아래에 위치 */
+    left: 0;
+    visibility: hidden; /* 기본적으로 숨김 처리 */
+    opacity: 0; /* 투명하게 설정 */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    background-color: #c0c0c0bd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+}
+
+/* 드롭다운 항목 */
+.dropdown li {
+    list-style: none;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, color 0.3s ease;
+   /* border-bottom:1px solid #132562;*/
+}
+
+/* 드롭다운 항목에 마우스를 올리면 색상 변경 */
+.dropdown li a:hover {
+    border-bottom: 1px solid #fff;
+    font-weight: bold;
+
+}
+
+/* 부모 항목에 마우스를 올리면 드롭다운 표시 */
+.nav-item:hover .dropdown {
+    visibility: visible; /* 드롭다운 메뉴를 표시 */
+    opacity: 1; /* 드롭다운 메뉴를 불투명하게 표시 */
+}
+
+/* 드롭다운 메뉴에 마우스를 올리면 메뉴가 사라지지 않도록 */
+.nav-item:hover .dropdown,
+.dropdown:hover {
+    visibility: visible; /* 드롭다운이 보이도록 설정 */
+    opacity: 1; /* 드롭다운을 불투명하게 설정 */
+    
+}
+
+#seconSec{
+      background-color: #000000;
+        /* max-height: 64%; */
+        height: 1041px;
+        margin-top: 16%;
+        z-index: 1;
+        display: block;
+        position: relative;
+}
+
+.locationMap{
+    text-align: center;
+    margin:0 auto;
+    padding-top:30px;
+}
+.whiteBtn{
+    cursor: pointer;
+    color:#fff;
+    border: 1px solid #fff;
+    text-decoration: none;
+    padding : 20px 120px;
+    border-radius: 3px;
+    
+   
+}
+.btnZone{
+    margin-top:50px;
+ text-align: center;
+}
+
+
+
+/*FOOTER*/
+footer{
+    background: url('/images/test/carbonImage.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll; 
+    position: relative;
+    z-index: 1;
+}
+
+#footerDiv{
+   padding: 40px 100px;
+}
+
+    </style>
+</head>
+<body>
+    <section id="firstSec">
+         <div class="ract-shape hex7"></div>
+        <nav>
+            <div id="titleLogo"><span class='pointfont'>D</span>EFENCE <span class='pointfont'>C</span>ARBON</div>
+            <div class="navbar">
+                <div class="nav-links">
+                    <div class="nav-item">
+                        <a href="#">회사 소개</a>
+                        <ul class="dropdown">
+                            <li> <a href="#">인사말</a></li>
+                            <li> <a href="#">연혁</a></li>
+                            <li> <a href="#">조직도</a></li>
+                            <li> <a href="#">주요성과</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#">사업분야</a>
+                        <ul class="dropdown">
+                            <li> <a href="#">기계적 물성 시험</a></li>
+                            <li> <a href="#">복합재 압력용기 시험</a></li>
+                            <li> <a href="#">철도 및 복합재 해석</a></li>
+                            <li> <a href="#">정적 & 동적 해석</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#">시험장비</a>
+                    </div>
+
+                    <div class="nav-item">
+                        <a href="#">주요 실적</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#">시험평가</a>
+                        <ul class="dropdown">
+                            <li> <a href="#">시험문의 및 견적의뢰</a></li>
+                            <li> <a href="#">성적서 진위 확인</a></li>
+                        </ul>
+                    </div>
+                
+            </div>
+        </nav>
+       
+        <div class="content">
+            <div class="title"><strong>DEFENCE CARBON</strong></div>
+            <div class="subtitle">
+                Defence Carbon is a specialized in composite materials company primarily engaged in composite structure design and<br>
+                analysis, pressure vessel hydrostatic testing, <br>carbon fiber strand specimen fabrication and testing, <br>as well as composite material property testing and evaluation under low and high-temperature environments.
+                advanced materials, innovation, cutting-edge technology...
+                <div class="btnZone"><a href="#" class="whiteBtn">More</a></div>
+            </div>
+
+            <div class="hex-cluster">
+                <div class="hex-shape hex1"><p class="hexP">Material Property Test</p></div>
+                <div class="hex-shape hex2"><p class="hexP">Pressure <br>Vessel Test</p></div>
+                <div class="hex-shape hex3"><p class="hexP">Raillway & Composite Analysis</p></div>
+                <div class="hex-shape hex4"><p class="hexP">Multibody Dynamics Analysis</p></div>
+                <div class="hex-shape hex5"><p class="hexP">Implict <br>&<br> Explict</p></div>
+                
+                 
+            </div>
+
+            
+        </div>
+            <!-- <div class="socials">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+                <a href="#">Pinterest</a>
+                <a href="#">Google+</a>
+            </div> -->
+            
+        </div>
+    </section>
+    <section id="seconSec">
+        <div>
+            <div class="content">
+                <div class="title"><strong>LOCATION</strong></div>
+                <div class="locationMap">
+                    <img src="/images/test/mapLocation.png" alt="map" width="70%;">
+                    <p style="color:#000; font-size: 1.3rem;"> <b> - Company Address</b></p>
+                    <p style="color:#000; "> Department of Mechanical Engineering, N7-609, Hanbat National University, Dongseo-daero 125, Yuseong-Gu, DaeJeon, 341-58, Rep of Korea
+</p>                <p style="color:#000; font-size: 1.3rem;"> <b> - Company Number</b></p>
+                    <p style="color:#000; "> Tel) +82-42-821-1470 / Fax) +82-42-821-1587 </p>
+                </div>
+              
+             </div>
+        </div>
+    </section>
+</body>
+<footer>
+    <div id="footerDiv">
+        Department of Mechanical Engineering, N7-609, Hanbat National University, Dongseo-daero 125, Yuseong-Gu, DaeJeon, 341-58, Rep. of Korea<br>
+        <br>Tel: +82-42-821-1470 / Fax: +82-42-821-1587​ / E-mail: lscae.laboratory@gmail.com<br>
+        <br>COPYRIGHT (c) 2023, Defence Carbon, ALL RIGHT RESERVED
+    </div>
+  
+</footer>
+</html>
