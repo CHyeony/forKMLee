@@ -91,26 +91,49 @@
             </div>
         </div>
     </section>
+
     <section id="seconSec">
-        <div>
-            <div class="content">
-                <div class="title"><strong>L</strong>OCATION</div>
-                <div class="locationMap">
-                   <div id="leftImage">
-                        <img src="/images/test/map1.png">
-                        
-                    </div>
-                    <!-- <img src="/images/test/mapLocation.png" alt="map" width="70%;"> -->
-                 
-                    <p style="color:#fff; font-size: 1.3rem;"> <b> - Company Address</b></p>
-                    <p style="color:#fff; "> Department of Mechanical Engineering, N7-609, Hanbat National University, Dongseo-daero 125, Yuseong-Gu, DaeJeon, 341-58, Rep of Korea
-</p>                <p style="color:#fff; font-size: 1.3rem;"> <b> - Company Number</b></p>
-                    <p style="color:#fff; "> Tel) +82-42-821-1470 / Fax) +82-42-821-1587 </p>
+    <div>
+        <div class="content">
+        <div class="title"><strong>L</strong>OCATION</div>
+        <div class="locationMap">
+            <div class="map-wrapper">
+            <img src="/images/test/map1.png" class="map-img">
+            <div class="dark-box-top">LOCATION</div>
+            <div class="overlay light-box">
+                <div class="overlay-text">
+                <h2>Company Address</h2>
+                <p>
+                    Department of Mechanical Engineering, N7-609,<br>
+                    Hanbat National University,<br>
+                    Dongseo-daero 125, Yuseong-Gu, DaeJeon, 341-58,<br>
+                    Rep of Korea
+                </p>
                 </div>
-              
-             </div>
+            </div>
+            </div>
+
+            <!-- 두 번째 블록 -->
+            <div class="map-wrapper">
+            <img src="/images/test/map2.png" class="map-img">
+            <div class="dark-box-top">LOCATION</div>
+            <div class="overlay light-box">
+                <div class="overlay-text">
+                <h2>Company Address</h2>
+                <p>
+                    Department of Mechanical Engineering, N7-609,<br>
+                    Hanbat National University,<br>
+                    Dongseo-daero 125, Yuseong-Gu, DaeJeon, 341-58,<br>
+                    Rep of Korea
+                </p>
+                </div>
+            </div>
+            </div>
         </div>
+        </div>
+    </div>
     </section>
+
     <script>
          // 클릭 시 이동
   document.querySelectorAll('.scroll-nav li').forEach(item => {
@@ -138,6 +161,17 @@
       }
     });
   });
+
+
+
+  // 스크롤 감지 후 클래스 추가
+window.addEventListener('scroll', () => {
+  const seconSec = document.querySelector('#seconSec');
+  const rect = seconSec.getBoundingClientRect();
+  if (rect.top < window.innerHeight * 0.6) {
+    seconSec.classList.add('active-section');
+  }
+});
     </script>
 </body>
 <footer>
@@ -145,7 +179,7 @@
         Department of Mechanical Engineering, N7-609, Hanbat National University, Dongseo-daero 125, Yuseong-Gu, DaeJeon, 341-58, Rep. of Korea<br>
         <br>Tel: +82-42-821-1470 / Fax: +82-42-821-1587​ / E-mail: lscae.laboratory@gmail.com<br>
         <br>COPYRIGHT (c) 2023, Defence Carbon, ALL RIGHT RESERVED
-        <br><span class="cc"> font - 출처 – 한국기계연구원, kimm.re.kr</span>
+      
     </div>
   
 </footer>

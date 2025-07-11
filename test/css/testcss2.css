@@ -143,7 +143,7 @@
             position: absolute;
             width: 250px;
             aspect-ratio: 1;
-            background: #373b42;
+            background: #94a2bf;
             clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
             box-shadow: 0 0 1px #000;
             font-family: 'GongGothicLight';
@@ -160,9 +160,11 @@
       
         }
         .hex2 { top: 31%; right: 61%; transform: scale(1.5); 
-            background: url('/images/test/carbonImage.jpg') no-repeat center center;
+            /* background: url('/images/test/ms2.jpg') no-repeat center center fixed;
             background-size: cover;
-            background-position: center; 
+            position: relative;
+            color: white;
+            animation: zoomInBg 5s ease-out forwards; */
         }
         .hex3 { top: 73%; right: -1%; transform: scale(0.9); }
         .hex4 { top: -16%; right: 2%; transform: scale(1.1); }
@@ -295,21 +297,91 @@
     
 }
 
-#seconSec{
-      background-color: #01162b;
-        /* max-height: 64%; */
-        height: 1041px;
-        margin-top: 16%;
-        z-index: 1;
-        display: block;
-        position: relative;
+
+/*SECOND SECTION */
+#seconSec {
+  background-color: #01162b;
+  height: auto;
+  padding-bottom: 80px;
+  margin-top: 16%;
+  position: relative;
+  z-index: 1;
 }
 
-.locationMap{
-    text-align: center;
-    margin:0 auto;
-    padding-top:30px;
+.map-wrapper {
+  position: relative;
+  width: 70%;
+  margin: 60px auto;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  background: transparent;
 }
+
+.map-img {
+  width: 60%;
+  display: block;
+  z-index: 1;
+}
+
+.dark-box-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 160px;
+  height: 40px;
+  background-color: #1a1c38;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  z-index: 3;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 1s ease;
+  transition-delay: 0s;
+}
+
+.overlay {
+  position: relative;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 1s ease;
+  transition-delay: 0.5s;
+}
+
+.light-box {
+  background-color: #cdd7ea;
+  z-index: 2;
+  flex-direction: column;
+  padding: 40px;
+  color: #000;
+  font-family: 'KIMM_MI';
+}
+
+.overlay-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.overlay-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* 스크롤 인식 */
+.active-section .overlay,
+.active-section .dark-box-top {
+  transform: translateX(0);
+  opacity: 1;
+}
+/* SECOND SECTION FIN*/
 .whiteBtn{
     cursor: pointer;
     color:#fff;
@@ -340,10 +412,6 @@ footer{
    padding: 40px 100px;
 }
 
-.cc{
-    color:#616161;
-    
-}
 /*BUTTON EFFECT*/
 
 h1 {
