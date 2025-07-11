@@ -1,15 +1,4 @@
-@font-face {
-    font-family: 'KIMM_Bold';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'KIMM_MI';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-}
+
 @font-face {
      font-family: 'DungGeunMo';
      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
@@ -17,10 +6,24 @@
      font-style: normal;
 }
 
+@font-face {
+    font-family: 'GongGothicMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GongGothicLight';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
         body {
             margin: 0;
-            /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
-            /* font-family: 'KIMM_Bold'; */
+          
             background: url('/images/test/aerospace3.jpg') no-repeat center center fixed;
             background-size: cover;
             position: relative;
@@ -73,24 +76,24 @@
             color: white;
             position: relative;
             z-index: 1;
-            font-family: 'KIMM_Bold';
+            font-family: 'GongGothicMedium';
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            font-family: 'KIMM_Bold';
+            font-family: 'GongGothicMedium';
             margin: 0 15px;
         }
  
         .title {
-            font-size: 4.5rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
             opacity: 1;
             transform: translateY(20px);
             animation: fadeInUp 1s ease forwards;
-            font-family: 'KIMM_Bold';
-
+            font-family: 'GongGothicMedium';
+            font-style: italic;
             
         }
 
@@ -110,7 +113,7 @@
             transform: translateY(20px);
             animation: fadeInUp 1s ease forwards;
             animation-delay: 0.5s;
-            font-family: 'KIMM_MI';
+            font-family: 'GongGothicLight';
         }
          @keyframes fadeInUp {
             to {
@@ -125,7 +128,7 @@
             transform: translateY(-50%);
             width: 300px;
             height: 500px;
-            font-family: 'KIMM_MI';
+            font-family: 'GongGothicLight';
         }
 
         .ract-shape{
@@ -143,7 +146,7 @@
             background: #423738;
             clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
             box-shadow: 0 0 1px #000;
-            font-family: 'KIMM_MI';
+            font-family: 'GongGothicLight';
         }
 
         .hex-shape:hover{
@@ -191,6 +194,7 @@
 
         strong {
             color: #F48315;
+            font-size: 4.5rem;
         }
 
         /*네비게이션*/
@@ -200,7 +204,7 @@
     float: right;
     align-items: center;
     margin-top: 19.92px;
-    font-family: 'KIMM_Bold';
+    font-family: 'GongGothicMedium';
     width: 63%;
 }
 
@@ -336,7 +340,10 @@ footer{
    padding: 40px 100px;
 }
 
-
+.cc{
+    color:#616161;
+    
+}
 /*BUTTON EFFECT*/
 
 h1 {
@@ -379,7 +386,7 @@ h1 {
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
-    font-family: 'KIMM_MI';
+    font-family: 'GongGothicLight';
     top: 0;
     left: 0;
     width: 100%;
@@ -442,7 +449,7 @@ h1 {
   right: 30px;
   transform: translateY(-50%);
   z-index: 999;
-  font-family: 'KIMM_Bold';
+  font-family: 'GongGothicMedium';
 }
 
 .scroll-nav ul {
@@ -488,24 +495,8 @@ h1 {
 
 
 /* LOCATION */
-.image-side-box-wrap {
-  display: flex;
-  width: 70%;
-  margin: 0 auto;
+.leftImage{
+    background-color: #fff;
+    width: 100%;
+    display: block;
 }
-
-.location-image {
-  width: 50%;
-  height: auto;
-  display: block;
-}
-
-.side-box {
-  width: 50%;
-  height: auto;
-}
-
-.black-box {
-  background-color: #ffffff;
-}
-
