@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defence Carbon</title>
+ 
+    <script src="/js/testscript.js" defer></script>
+    <style>
+        
+        @font-face {
+            font-family: 'KoBatangB';
+            src: url('/font/KoPubWorld Batang Bold.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'KoBatangM';
+            src: url('/font/KoPubWorld Batang Medium.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'KoBatangL';
+            src: url('/font/KoPubWorld Batang Light.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+    nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            color: white;
+            position: relative;
+            z-index: 1000;
+            font-family: 'KoBatangB';
+            transition: background-color 0.3s ease;
+        }
+        nav.fixed {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background-color: #fff;
+          color: #000; /* 필요하면 글자색도 바꿔주세요 */
+          z-index: 10000;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        /* nav 안 a 링크 색상 변경 */
+        nav.fixed a {
+          color: #000;
+          transition: color 0.3s ease;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-family: 'KoBatangB';
+            margin: 0 15px;
+        }
+ 
+        .title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            opacity: 1;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+            font-family: 'KoBatangB';
+            font-style: italic;
+            
+        }
+    </style>
+</head>
+<body>
+    <section id="firstSec">
+         
+        <nav>
+            <div id="titleLogo"><span class='pointfont'>D</span>EFENCE <span class='pointfont'>C</span>ARBON</div>
+            <div class="navbar">
+                <div class="nav-links">
+                    <div class="nav-item">
+                        <a href="#">회사 소개</a>
+                        <ul class="dropdown">
+                            <li> <a href="/test/3/P10.html">인사말</a></li>
+                            <li> <a href="/test/3/P20.html">연혁</a></li>
+                            <li> <a href="/test/3/P30.html">조직도</a></li>
+                            <li> <a href="/test/3/P40.html">주요성과</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#">사업분야</a>
+                        <ul class="dropdown">
+                            <li> <a href="/test/3/P50.html">기계적 물성 시험</a></li>
+                            <li> <a href="/test/3/P60.html">복합재 압력용기 시험</a></li>
+                            <li> <a href="/test/3/P70.html">철도 및 복합재 해석</a></li>
+                            <li> <a href="/test/3/P80.html">정적 & 동적 해석</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-item">
+                        <a href="/test/3/P90.html">시험장비</a>
+                    </div>
+
+                    <div class="nav-item">
+                        <a href="/test/3/">주요 실적</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#">시험평가</a>
+                        <ul class="dropdown">
+                            <li> <a href="#">시험문의 및 견적의뢰</a></li>
+                            <li> <a href="#">성적서 진위 확인</a></li>
+                        </ul>
+                    </div>
+                
+            </div>
+        </nav>
+ 
+         
+           
+        </div>
+    </section>
+
+</body>
+
+</html>
