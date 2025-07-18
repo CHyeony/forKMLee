@@ -184,20 +184,34 @@
             width: 210px;
             aspect-ratio: 1;
             background: #709ac3; 
+           
           
             clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
            
             
             font-family: 'KoBatangB';
         }
-
+        .hex-text{
+           position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 90%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            transition: opacity 0.3s ease;
+            color: white;
+            padding: 10px;
+            line-height: 1.4;
+        }
         .hex-shape:hover{
 
-            transform: scale(1.05);
+            transform: scale(0.8);
             background: linear-gradient(145deg, #7293d0, #1a1f3f);
+            
             box-shadow: 
               5px 5px 10px rgba(0, 0, 0, 0.6),
               -5px -5px 10px rgba(255, 255, 255, 0.1);
+              
             z-index: 2;
         }
         /* 마우스를 올렸을 때, 다른 hex 들은 작아지게 */
@@ -213,19 +227,8 @@
           z-index: 3;
         }
 
-        .hex1 { top: 3%;right: 155%; transform: scale(1.1);   
-            /* background-image: url('/images/test/aerospace2.jpg');
-            background-size: cover;
-            background-position: center; */
-      
-        }
-        .hex2 { top: 44%; right: 92%; transform: scale(1.5); 
-            /* background: url('/images/test/ms2.jpg') no-repeat center center fixed;
-            background-size: cover;
-            position: relative;
-            color: white;
-            animation: zoomInBg 5s ease-out forwards; */
-        }
+        .hex1 { top: 3%;right: 155%; transform: scale(1.1);}
+        .hex2 { top: 44%; right: 92%; transform: scale(1.5); }
         .hex3 { top: 84%; right: 30%; transform: scale(1.1); }
         .hex4 { top: 3%; right: 30%; transform: scale(1.1); }
         .hex5 { top: 84%; right: 155%; transform: scale(1.1); }
@@ -237,12 +240,27 @@
         }
 
         .hexP{ margin:0 auto; padding-top:22%; text-align:center; font-size:1.7rem;}
-        .hexP:hover{
-            font-size: 2rem;
-          
+       
+
+        .default-text {
+          opacity: 1;
+          z-index: 1;
+        }
+        .hover-text {
+          opacity: 0;
+          z-index: 2;
         }
 
+        /* Hover 효과 */
+        .hex-shape:hover .default-text {
+          opacity: 0;
+          font-size: 0.5rem;
+        }
 
+        .hex-shape:hover .hover-text {
+          opacity: 1;
+          font-size: 0.5rem;
+        }
 
         
         .socials {
