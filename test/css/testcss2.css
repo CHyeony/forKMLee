@@ -95,8 +95,23 @@
             position: relative;
             z-index: 1000;
             font-family: 'KoBatangB';
+            transition: background-color 0.3s ease;
         }
-
+        nav.fixed {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background-color: #fff;
+          color: #000; /* 필요하면 글자색도 바꿔주세요 */
+          z-index: 10000;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        /* nav 안 a 링크 색상 변경 */
+        nav.fixed a {
+          color: #000;
+          transition: color 0.3s ease;
+        }
         nav a {
             color: white;
             text-decoration: none;
