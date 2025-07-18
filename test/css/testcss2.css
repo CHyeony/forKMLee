@@ -510,7 +510,7 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1000px;
-  /* margin: 10px auto 35px; */
+  margin-top: 30px;
 }
 .btn {
   position: relative;
