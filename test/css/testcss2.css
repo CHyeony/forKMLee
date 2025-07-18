@@ -93,7 +93,7 @@
             padding: 20px 50px;
             color: white;
             position: relative;
-            z-index: 1;
+            z-index: 1000;
             font-family: 'KoBatangB';
         }
 
@@ -174,16 +174,9 @@
             height: 500px;
             font-family: 'KoBatangB';
         }
-        .hex-shape:hover {
-        clip-path: inset(0); /* 육각형 → 네모 */
-        background-color: #202851;
-        z-index: 1;
-        }
-        .hex-shape:hover .hexP {
-        font-size: 2rem;
-        color: #ff0;
-        }
+   
         .hex-shape {
+           aspect-ratio: 1;
             /* transition: clip-path 0.5s ease, background-color 0.5s ease; */
              transition: clip-path 0.4s ease, background-color 0.4s ease, transform 0.4s ease;
             color:#eeeeee;
@@ -193,19 +186,34 @@
             background: #709ac3; 
           
             clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-            box-shadow: 0 0 1px #000;
+           
             
             font-family: 'KoBatangB';
         }
 
         .hex-shape:hover{
-            background: none;
-              background-color:#202851;
+
+            transform: scale(1.05);
+            background: linear-gradient(145deg, #7293d0, #1a1f3f);
+            box-shadow: 
+              5px 5px 10px rgba(0, 0, 0, 0.6),
+              -5px -5px 10px rgba(255, 255, 255, 0.1);
+            z-index: 2;
         }
-         .hex-shape:hover ~ .hex-shape {
-          transform: scale(0.8); 
+        /* 마우스를 올렸을 때, 다른 hex 들은 작아지게 */
+        .hex-cluster:hover .hex-shape {
+          transform: scale(0.8);
+          z-index: 1;
         }
-        .hex1 { top: 1%;right: 155%; transform: scale(1.1);   
+    
+        /* 단, 내가 hover 중일 땐 scale을 원래대로 복구 */
+        .hex-shape:hover {
+          transform: scale(2.05) !important;
+        
+          z-index: 3;
+        }
+
+        .hex1 { top: 3%;right: 155%; transform: scale(1.1);   
             /* background-image: url('/images/test/aerospace2.jpg');
             background-size: cover;
             background-position: center; */
@@ -219,7 +227,7 @@
             animation: zoomInBg 5s ease-out forwards; */
         }
         .hex3 { top: 84%; right: 30%; transform: scale(1.1); }
-        .hex4 { top: 1%; right: 30%; transform: scale(1.1); }
+        .hex4 { top: 3%; right: 30%; transform: scale(1.1); }
         .hex5 { top: 84%; right: 155%; transform: scale(1.1); }
         .hex6 {
             top: 72%;
@@ -264,6 +272,7 @@
     margin-top: 19.92px;
     font-family: 'KoBatangM';
     width: 63%;
+    
 }
 
 
@@ -285,6 +294,7 @@
 
 .nav-item {
     position: relative; /* 드롭다운 메뉴를 감싸는 부모 */
+    z-index: 1001; /* 드롭다운보다 위 */
 }
 
 /* 메뉴 링크 기본 스타일 */
@@ -312,7 +322,7 @@
     background-color: #c0c0c0bd;
     border-radius: 5px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    z-index: 10;
+     z-index: 1002; /* nav보다 위로 확실히 */
     padding: 0;
     margin: 0;
 }
@@ -323,7 +333,10 @@
 }
 
 .dropdown li a {
+    pointer-events: auto;   /* 링크 클릭 가능하게 */
     display: block;
+    z-index: 10;            /* 필요 시 다른 요소 위로 */
+  position: relative;     /* z-index 적용하려면 position 있어야 함 */
     padding: 10px 20px;
     text-decoration: none;
     color: #000;
@@ -334,9 +347,11 @@
 
 /* 드롭다운 항목에 마우스를 올리면 색상 변경 */
 .dropdown li a:hover {
-    border-bottom: 1px solid #fff;
+    /* border-bottom: 1px solid #fff; */
     font-weight: bold;
-
+    background-color: #ffffff;
+    border-radius: 5px;
+    color: #384156;
 }
 
 /* 부모 항목에 마우스를 올리면 드롭다운 표시 */
@@ -458,11 +473,14 @@
 
 /*FOOTER*/
 footer{
-    background: url('/images/test/carbonImage.jpg') no-repeat center center;
+    /* background: url('/images/test/carbonImage.jpg') no-repeat center center; */
+    background-color: #758ba1;
     background-size: cover;
     background-attachment: scroll; 
     position: relative;
     z-index: 1;
+    
+    font-family: 'KoBatangM';
 }
 
 #footerDiv{
