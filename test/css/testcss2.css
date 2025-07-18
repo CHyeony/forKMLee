@@ -21,7 +21,19 @@
 
 @font-face {
     font-family: 'KoBatangB';
-    src: '/font/KoPubWorld Batang Bold/ttf';
+      src: url('/font/KoPubWorld Batang Bold.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'KoBatangM';
+    src: url('/font/KoPubWorld Batang Medium.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'KoBatangL';
+    src: url('/font/KoPubWorld Batang Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
@@ -82,13 +94,13 @@
             color: white;
             position: relative;
             z-index: 1;
-            font-family: 'GongGothicMedium';
+            font-family: 'KoBatangB';
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            font-family: 'GongGothicMedium';
+            font-family: 'KoBatangB';
             margin: 0 15px;
         }
  
@@ -98,7 +110,7 @@
             opacity: 1;
             transform: translateY(20px);
             animation: fadeInUp 1s ease forwards;
-            font-family: 'GongGothicMedium';
+            font-family: 'KoBatangB';
             font-style: italic;
             
         }
@@ -137,7 +149,7 @@
             transform: translateY(20px);
             animation: fadeInUp 1s ease forwards;
             animation-delay: 0.5s;
-            font-family: 'GongGothicLight';
+            font-family: 'KoBatangL';
         }
          @keyframes fadeInUp {
             to {
@@ -160,7 +172,7 @@
             transform: translateY(-50%);
             width: 300px;
             height: 500px;
-            font-family: 'GongGothicLight';
+            font-family: 'KoBatangB';
         }
         .hex-shape:hover {
         clip-path: inset(0); /* 육각형 → 네모 */
@@ -183,32 +195,32 @@
             clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
             box-shadow: 0 0 1px #000;
             
-            font-family: 'GongGothicLight';
+            font-family: 'KoBatangB';
         }
 
         .hex-shape:hover{
             background: none;
               background-color:#202851;
         }
-        /* .hex-shape:hover ~ .hex-shape {
-          transform: scale(0.8); /* 주변 도형 작아짐 */
-        } */
-        .hex1 { top: -14%;right: 96%; transform: scale(0.7);   
+         .hex-shape:hover ~ .hex-shape {
+          transform: scale(0.8); 
+        }
+        .hex1 { top: 1%;right: 155%; transform: scale(1.1);   
             /* background-image: url('/images/test/aerospace2.jpg');
             background-size: cover;
             background-position: center; */
       
         }
-        .hex2 { top: 31%; right: 61%; transform: scale(1.5); 
+        .hex2 { top: 44%; right: 92%; transform: scale(1.5); 
             /* background: url('/images/test/ms2.jpg') no-repeat center center fixed;
             background-size: cover;
             position: relative;
             color: white;
             animation: zoomInBg 5s ease-out forwards; */
         }
-        .hex3 { top: 73%; right: -1%; transform: scale(0.9); }
-        .hex4 { top: -16%; right: 2%; transform: scale(1.1); }
-        .hex5 { top: 84%; right: 105%; transform: scale(1.1); }
+        .hex3 { top: 84%; right: 30%; transform: scale(1.1); }
+        .hex4 { top: 1%; right: 30%; transform: scale(1.1); }
+        .hex5 { top: 84%; right: 155%; transform: scale(1.1); }
         .hex6 {
             top: 72%;
             right: 165%;
@@ -216,7 +228,7 @@
             z-index: 10;
         }
 
-        .hexP{ margin:0 auto; padding-top:100px; text-align:center; font-size:1.7rem;}
+        .hexP{ margin:0 auto; padding-top:22%; text-align:center; font-size:1.7rem;}
         .hexP:hover{
             font-size: 2rem;
           
@@ -250,7 +262,7 @@
     float: right;
     align-items: center;
     margin-top: 19.92px;
-    font-family: 'GongGothicMedium';
+    font-family: 'KoBatangM';
     width: 63%;
 }
 
@@ -350,7 +362,7 @@
   margin-top: 16%;
   position: relative;
   z-index: 1;
-  font-family: 'GongGothicMedium';
+  font-family: 'KoBatangB';
 }
 
 .map-wrapper {
@@ -407,7 +419,7 @@
   flex-direction: column;
   padding: 40px;
   color: #000;
-  font-family: 'KIMM_MI';
+  font-family: 'KoBatangM';
 }
 
 .overlay-text h2 {
@@ -499,7 +511,7 @@ h1 {
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
-    font-family: 'GongGothicLight';
+    font-family: 'KoBatangL';
     top: 0;
     left: 0;
     width: 100%;
@@ -562,7 +574,7 @@ h1 {
   right: 30px;
   transform: translateY(-50%);
   z-index: 999;
-  font-family: 'GongGothicMedium';
+  font-family: 'KoBatangM';
 }
 
 .scroll-nav ul {
