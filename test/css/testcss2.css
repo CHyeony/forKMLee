@@ -19,6 +19,12 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'KoBatangB';
+    src: '/font/KoPubWorld Batang Bold/ttf';
+    font-weight: 300;
+    font-style: normal;
+}
 
 
         body {
@@ -166,10 +172,11 @@
         color: #ff0;
         }
         .hex-shape {
-            transition: clip-path 0.5s ease, background-color 0.5s ease;
+            /* transition: clip-path 0.5s ease, background-color 0.5s ease; */
+             transition: clip-path 0.4s ease, background-color 0.4s ease, transform 0.4s ease;
             color:#eeeeee;
             position: absolute;
-            width: 250px;
+            width: 210px;
             aspect-ratio: 1;
             background: #709ac3; 
           
@@ -183,6 +190,9 @@
             background: none;
               background-color:#202851;
         }
+        /* .hex-shape:hover ~ .hex-shape {
+          transform: scale(0.8); /* 주변 도형 작아짐 */
+        } */
         .hex1 { top: -14%;right: 96%; transform: scale(0.7);   
             /* background-image: url('/images/test/aerospace2.jpg');
             background-size: cover;
